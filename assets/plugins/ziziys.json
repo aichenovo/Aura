@@ -1,0 +1,20 @@
+{
+  "api": "5",
+  "type": "tv",
+  "name": "子子影视",
+  "version": "1.0",
+  "muliSources": true,
+  "useWebview": true,
+  "useWebviewForPages": true,
+  "useNativePlayer": true,
+  "useLegacyParser": false,
+  "userAgent": "",
+  "referer": "https://www.ziziys.org/",
+  "baseURL": "https://www.ziziys.org",
+  "searchURL": "https://www.ziziys.org/vsearch/@keyword--.html",
+  "searchList": "//div[contains(@class,'module-items')]/div[contains(@class,'module-search-item')]",
+  "searchName": ".//h3/a",
+  "searchResult": ".//h3/a",
+  "chapterRoads": "//div[contains(@class,'module-list') and contains(@class,'module-player-list')]",
+  "chapterResult": "//div[@class='module-blocklist']/div[@class='sort-item']/a"
+}

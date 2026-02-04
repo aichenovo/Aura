@@ -1,0 +1,485 @@
+<html lang="zh-cn"><head>
+ <title>怪奇物语搜索结果 - 子子影视</title>
+<meta name="keywords" content="怪奇物语搜索结果">
+<meta name="description" content="怪奇物语搜索结果">      
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<script>var maccms={"path":"","mid":"1","url":"www.ziziys.org","wapurl":"www.ziziys.org","mob_status":"0"};</script>
+<meta name="monetag" content="cd91daba4fb44e23176f8e103bd24e21">
+<link rel="icon" href="/mvstatic/picture/logo.png" type="image/png">
+<link href="/mvstatic/css/style.css" rel="stylesheet" type="text/css">
+<link href="/mvstatic/css/aliicon.css" rel="stylesheet" type="text/css">
+<link disabled="disabled" class="theme_black" type="text/css" rel="stylesheet" href="/mvstatic/css/mxhtmlblack.css"><script src="/mvstatic/js/jquery.js"></script>
+<script type="text/javascript" src="/mvstatic/js/jquery.lazyload.js"></script>
+<script src="/mvstatic/js/jquery.autocomplete.js"></script>
+<script src="/mvstatic/js/jquery.cookie.js"></script>
+<script src="/mvstatic/js/home.js"></script>
+<script type="text/javascript" src="/mvstatic/js/jquery.clipboard.js"></script>
+<script src="/static/layui/lay/modules/layer.js"></script><link rel="stylesheet" href="https://www.ziziys.org/static/layui/lay/modules/theme/default/layer.css?v=3.1.1" id="layuicss-layer">
+<script src="/mvstatic/js/script.js"></script>
+<script>
+	var clothes = $.cookie('clothes');
+	if (clothes) {
+		if (clothes == 'white') {
+			$('.theme_black').removeAttr('disabled');
+		} else {
+			$('.theme_black').attr('disabled', '');
+		}
+	} else {
+		$.cookie('clothes', 'black', { expires: 365, path: '/' })
+	}
+</script>
+<script>
+
+	function clothesChange(){
+		var clothes = $.cookie('clothes');
+		if (clothes == 'black') {
+			$.cookie('clothes','white', {expires: 365, path: '/'});  
+			$('.theme_black').each(function(){
+			    $(this).removeAttr('disabled');
+			});
+			
+		} else {
+			$.cookie('clothes','black', {expires: 365, path: '/'});  
+			$('.theme_black').each(function(){
+			    $(this).attr('disabled', '');
+			});
+		}
+		clothes = $.cookie('clothes');
+	}
+</script>
+	 <!-- 全局广告位 -->
+ </head>
+<body class="search page">
+    
+ <header id="header" class="wrapper">
+	<div class="header-content  ">
+		<div class="content">
+			<div class="brand">
+				<a href="/" class="logo" title="子子影视"><img src="/mvstatic/picture/logo.png" alt="子子影视"></a>
+			</div>
+
+			<div class="nav-search">
+				<form action="/vsearch/--.html" class="search-dh">
+				    				</form>
+			</div>
+
+			<div class="nav">
+				<ul class="nav-menu-items">
+					<li class="nav-menu-item ">
+						<a href="/" title="子子影视首页">
+						 <span class="nav-menu-item-name">首页</span></a>
+					</li>
+										<li class="nav-menu-item  ">
+						<a href="/list/1.html" title="电影">
+						     
+						    <span class="nav-menu-item-name">电影</span></a>
+					</li>
+										<li class="nav-menu-item  ">
+						<a href="/list/2.html" title="电视剧">
+						     
+						    <span class="nav-menu-item-name">电视剧</span></a>
+					</li>
+										<li class="nav-menu-item  ">
+						<a href="/list/3.html" title="动漫">
+						     
+						    <span class="nav-menu-item-name">动漫</span></a>
+					</li>
+						
+					<li class="nav-menu-item  domain plus">
+						<a href="javascript:;" title="子子影视最新域名">
+						   
+						    <span class="nav-menu-item-name">网址</span><em>+</em></a>
+					</li>
+					 					 
+				</ul>
+			</div>
+				 			<div class="header-module">
+				<ul class="nav-menu-items">
+				     					
+					<li class="nav-menu-item nav-menu-search"><i class="icon-search"></i></li>
+					<li class="space-line-bold"></li>
+					<li class="nav-menu-item drop"><span class="nav-menu-icon"><i class="icon-watch-history"></i></span>
+						<div class="drop-content drop-history">
+							<div class="drop-content-box">
+								<ul class="drop-content-items" id="history">
+									<li class="list-item list-item-title">
+										<a href="" class="playlist historyclean"><i class="icon-clear"></i></a>
+										<strong>我的观影记录</strong></li>
+								<li class="drop-tips">暂无观影历史</li></ul>
+							</div>
+						</div>
+						<div class="shortcuts-mobile-overlay"></div>
+					</li>
+										<li class="space-line-bold"></li>
+					<li class="nav-menu-item drop wapblock">
+						<a class="mac_user" href="javascript:;" title="会员中心"><i class="iconfont icon-yonghu-fuben"></i><span></span></a>
+					</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+<script>
+		 $(".nav-menu-search").click(function () {
+             $(".nav-search").addClass("block");
+         });
+	$(document).scroll(function() {
+		var H = $(document).scrollTop();
+		if(H > 20) {
+		  $(".header-content").addClass("header-bg");
+		} else {
+		  $(".header-content").removeClass("header-bg");
+		}
+		if(H > 140) {
+          $(".header-content").addClass("header-bg");
+         $(".search-dh").append($(".search-box"));
+           $(".nav-menu-search").click(function () {
+             $(".nav-search").addClass("block");
+         });
+		} else {
+         $(".header-content").removeClass("header-bg");
+          $(".search-main").append($(".search-box"));
+         
+		}
+	});
+</script>
+ 
+   <!-- 头部 -->
+
+<main id="main" class="wrapper">
+  <div class="content">
+    <div id="search-content">
+    <form action="/vsearch/--.html">
+          <div class="search-main">
+				<div class="search-box">
+					<input class="search-input ac_wd" id="txtKeywords" type="text" name="wd" autocomplete="off" placeholder="搜索电影、电视剧、综艺、动漫">
+					<div class="search-drop">
+						<div class="drop-content-items ac_hot none">
+							<div class="list-item list-item-title"><strong>大家都在搜这些影片</strong></div>
+							<div class="search-tag">
+												       	<a href="/vsearch/%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A--.html" class="hot "><i class="icon-hot"></i>变形金刚</a>
+						    					       	<a href="/vsearch/%E7%81%AB%E5%BD%B1%E5%BF%8D%E8%80%85--.html" class="hot "><i class="icon-hot"></i>火影忍者</a>
+						    					       	<a href="/vsearch/%E5%A4%8D%E4%BB%87%E8%80%85%E8%81%94%E7%9B%9F--.html" class="hot "><i class="icon-hot"></i>复仇者联盟</a>
+						    					       	<a href="/vsearch/%E6%88%98%E7%8B%BC--.html" class="hot "><i class="icon-hot"></i>战狼</a>
+						    					       	<a href="/vsearch/%E7%BA%A2%E6%B5%B7%E8%A1%8C%E5%8A%A8--.html" class=""><i class="icon-hot"></i>红海行动</a>
+						    							</div>
+						</div>
+					</div>
+					<button class="search-btn search-go" type="submit"><i class="icon-search"></i></button>
+					<button class="cancel-btn" type="button">取消</button>
+				</div>
+					</div>
+			</form>
+      <div class="search-stat">
+        <h1>怪奇物语</h1>
+        <h2>搜索"怪奇物语" ，找到 <strong class="mac_total">5</strong>部影视作品</h2>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-list">
+        <div class="module-items">
+             
+                   <div class="module-search-item">
+            <div class="video-cover">
+              <div class="module-item-cover">
+                <div class="module-item-pic"><a href="/video/5706-1-1.html" title="立刻播放怪奇物语 第五季"><i class="icon-play"></i></a><img class="lazy lazyload" data-src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=www.bttwo.org/wp-content/uploads/2025/11/304851a442431-360x528.jpg" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=www.bttwo.org/wp-content/uploads/2025/11/304851a442431-360x528.jpg" alt="怪奇物语 第五季">
+                  <div class="loading"></div>
+                </div>
+              </div>
+            </div>
+            <div class="video-info">
+              <div class="video-info-header"><a class="video-serial" href="/vdetail/5706.html" title="怪奇物语 第五季">全8集</a>
+                <h3><a href="/vdetail/5706.html" title="怪奇物语 第五季">怪奇物语 第五季</a></h3>
+                <div class="video-info-aux">
+                <a href="/list/2.html" title="电视剧" class="tag-link"><span class="video-tag-icon">
+                                         <i class="icon-cate-ds"></i>
+                      电视剧</span></a>
+                	<div class="tag-link"><a href="/vsearch/--/year/2025.html" target="_blank">2025</a>&nbsp;</div>
+                  <div class="tag-link"><a href="/vsearch/--/area/%E7%BE%8E%E5%9B%BD.html" target="_blank">美国</a>&nbsp;</div>
+                 </div>
+              </div>
+              <div class="video-info-main">
+                  <div class="video-info-items"><span class="video-info-itemtitle">导演：</span>
+                 	<div class="video-info-item video-info-actor"><span class="slash">/</span>
+					    <a href="/vsearch/--/director/%E8%82%96%E6%81%A9%C2%B7%E5%88%A9%E7%BB%B4.html" target="_blank">肖恩·利维</a><span class="slash">/</span><a href="/vsearch/--/director/%E9%A9%AC%E7%89%B9%C2%B7%E8%BE%BE%E8%8F%B2.html" target="_blank">马特·达菲</a><span class="slash">/</span><a href="/vsearch/--/director/%E7%BD%97%E6%96%AF%C2%B7%E8%BE%BE%E8%8F%B2.html" target="_blank">罗斯·达菲</a><span class="slash">/</span><a href="/vsearch/--/director/%E4%B8%B9%C2%B7%E7%89%B9%E6%8B%89%E4%BA%A8%E4%BC%AF%E6%A0%BC.html" target="_blank">丹·特拉亨伯格</a><span class="slash">/</span><a href="/vsearch/--/director/%E5%BC%97%E5%85%B0%E5%85%8B%C2%B7%E5%BE%B7%E6%8B%89%E9%82%A6%E7%89%B9.html" target="_blank">弗兰克·德拉邦特</a><span class="slash">/</span>						</div>
+                </div>
+                <div class="video-info-items"><span class="video-info-itemtitle">主演：</span>
+                 <div class="video-info-item video-info-actor"><span class="slash">/</span>
+						<a href="/vsearch/-%E8%96%87%E8%AF%BA%E5%A8%9C%C2%B7%E7%91%9E%E5%BE%B7-.html" target="_blank">薇诺娜·瑞德</a><span class="slash">/</span><a href="/vsearch/-%E5%A4%A7%E5%8D%AB%C2%B7%E5%93%88%E4%BC%AF-.html" target="_blank">大卫·哈伯</a><span class="slash">/</span><a href="/vsearch/-%E7%B1%B3%E8%8E%89%C2%B7%E6%B3%A2%E6%AF%94%C2%B7%E5%B8%83%E6%9C%97-.html" target="_blank">米莉·波比·布朗</a><span class="slash">/</span><a href="/vsearch/-%E8%8F%B2%E6%81%A9%C2%B7%E4%BC%8D%E6%B3%95%E5%BE%B7-.html" target="_blank">菲恩·伍法德</a><span class="slash">/</span><a href="/vsearch/-%E4%BC%BD%E5%A1%94%C2%B7%E9%A9%AC%E5%A1%94%E6%8B%89%E4%BD%90-.html" target="_blank">伽塔·马塔拉佐</a><span class="slash">/</span><a href="/vsearch/-%E5%87%AF%E8%8E%B1%E5%B8%83%C2%B7%E9%BA%A6%E5%85%8B%E5%8A%B3%E5%85%8B%E6%9E%97-.html" target="_blank">凯莱布·麦克劳克林</a><span class="slash">/</span><a href="/vsearch/-%E8%AF%BA%E4%BA%9A%C2%B7%E6%96%BD%E7%BA%B3%E6%99%AE-.html" target="_blank">诺亚·施纳普</a><span class="slash">/</span><a href="/vsearch/-%E8%90%A8%E8%BF%AA%C2%B7%E8%BE%9B%E5%85%8B-.html" target="_blank">萨迪·辛克</a><span class="slash">/</span><a href="/vsearch/-%E5%A8%9C%E5%A1%94%E8%8E%89%C2%B7%E6%88%B4%E5%B0%94-.html" target="_blank">娜塔莉·戴尔</a><span class="slash">/</span><a href="/vsearch/-%E6%9F%A5%E7%90%86%C2%B7%E5%B8%8C%E9%A1%BF-.html" target="_blank">查理·希顿</a><span class="slash">/</span><a href="/vsearch/-%E4%B9%94%C2%B7%E5%9F%BA%E7%91%9E-.html" target="_blank">乔·基瑞</a><span class="slash">/</span><a href="/vsearch/-%E7%8E%9B%E9%9B%85%C2%B7%E9%9C%8D%E5%85%8B-.html" target="_blank">玛雅·霍克</a><span class="slash">/</span><a href="/vsearch/-%E6%99%AE%E8%8E%89%E9%9B%85%C2%B7%E5%BC%97%E6%A0%BC%E6%A3%AE-.html" target="_blank">普莉雅·弗格森</a><span class="slash">/</span><a href="/vsearch/-%E5%B8%83%E4%BC%A6%E7%89%B9%C2%B7%E5%90%89%E5%B0%94%E6%9B%BC-.html" target="_blank">布伦特·吉尔曼</a><span class="slash">/</span><a href="/vsearch/-%E6%9D%B0%E7%B1%B3%C2%B7%E5%9D%8E%E8%B4%9D%E5%B0%94%C2%B7%E9%B2%8D%E5%B0%94-.html" target="_blank">杰米·坎贝尔·鲍尔</a><span class="slash">/</span><a href="/vsearch/-%E5%8D%A1%E6%8B%89%C2%B7%E5%B8%83%E6%AC%A7%E8%AF%BA-.html" target="_blank">卡拉·布欧诺</a><span class="slash">/</span><a href="/vsearch/-%E8%89%BE%E7%B1%B3%E8%B4%9D%E4%B8%9D%C2%B7%E9%BA%A6%E5%85%8B%E7%BA%B3%E5%B0%94%E8%92%82-.html" target="_blank">艾米贝丝·麦克纳尔蒂</a><span class="slash">/</span><a href="/vsearch/-%E5%86%85%E5%B0%94%C2%B7%E8%B4%B9%E5%B8%8C%E5%B0%94-.html" target="_blank">内尔·费希尔</a><span class="slash">/</span><a href="/vsearch/-%E6%9D%B0%E5%85%8B%C2%B7%E5%BA%B7%E5%A5%88%E5%88%A9-.html" target="_blank">杰克·康奈利</a><span class="slash">/</span><a href="/vsearch/-%E7%90%B3%E8%BE%BE%C2%B7%E6%B1%89%E5%AF%86%E5%B0%94%E9%A1%BF-.html" target="_blank">琳达·汉密尔顿</a><span class="slash">/</span><a href="/vsearch/-%E9%A9%AC%E4%BF%AE%C2%B7%E8%8E%AB%E8%BF%AA%E6%81%A9-.html" target="_blank">马修·莫迪恩</a><span class="slash">/</span><a href="/vsearch/-%E4%BF%9D%E7%BD%97%C2%B7%E9%9B%B7%E7%91%9F-.html" target="_blank">保罗·雷瑟</a><span class="slash">/</span><a href="/vsearch/-%E7%88%B1%E5%BE%B7%E5%8D%8E%E5%A4%9A%C2%B7%E5%BC%97%E5%85%B0%E7%A7%91-.html" target="_blank">爱德华多·弗兰科</a><span class="slash">/</span><a href="/vsearch/-%E8%B0%A2%E5%B0%94%E6%9B%BC%C2%B7%E5%A5%A5%E5%8F%A4%E6%96%AF%E5%9B%BE%E6%96%AF-.html" target="_blank">谢尔曼·奥古斯图斯</a><span class="slash">/</span><a href="/vsearch/-%E6%B1%A4%E5%A7%86%C2%B7%E5%BC%97%E6%8B%89%E5%B8%AD%E4%BA%9A-.html" target="_blank">汤姆·弗拉席亚</a><span class="slash">/</span>						</div>
+                </div>
+                  <div class="video-info-items"><span class="video-info-itemtitle">剧情：</span>
+                  <div class="video-info-item">1987年秋天，裂缝开启让霍金斯小镇伤痕累累，主角群团结起来，只为一个目标：找到威可那并杀掉他。但威可那彻底消失，他的行踪和计划皆成谜。更麻烦的是，政府将整个小镇列为军事隔离区，更加强搜捕伊莱雯，迫使她必须再度藏身。威尔失踪将届周年之际，再熟悉不过的恐惧感排山倒海袭来。最终战役将至，这次他们要面对的…</div>
+                </div>
+              </div>
+              <div class="video-info-footer">
+                                  <a href="/video/5706-1-1.html" class="btn-important btn-base" title="立刻播放怪奇物语 第五季"><i class="icon-play"></i><strong>立即播放</strong></a>
+                               </div>
+            </div>
+          </div>  
+             
+                   <div class="module-search-item">
+            <div class="video-cover">
+              <div class="module-item-cover">
+                <div class="module-item-pic"><a href="/video/2562-1-1.html" title="立刻播放怪奇物语 第三季"><i class="icon-play"></i></a><img class="lazy lazyload" data-src="https://p1.ssl.qhimgs1.com/t02d1aed06db67dd93d.jpg" src="https://p1.ssl.qhimgs1.com/t02d1aed06db67dd93d.jpg" alt="怪奇物语 第三季">
+                  <div class="loading"></div>
+                </div>
+              </div>
+            </div>
+            <div class="video-info">
+              <div class="video-info-header"><a class="video-serial" href="/vdetail/2562.html" title="怪奇物语 第三季">全8集</a>
+                <h3><a href="/vdetail/2562.html" title="怪奇物语 第三季">怪奇物语 第三季</a></h3>
+                <div class="video-info-aux">
+                <a href="/list/2.html" title="电视剧" class="tag-link"><span class="video-tag-icon">
+                                         <i class="icon-cate-ds"></i>
+                      电视剧</span></a>
+                	<div class="tag-link"><a href="/vsearch/--/year/2019.html" target="_blank">2019</a>&nbsp;</div>
+                  <div class="tag-link"><a href="/vsearch/--/area/%E7%BE%8E%E5%9B%BD.html" target="_blank">美国</a>&nbsp;</div>
+                 </div>
+              </div>
+              <div class="video-info-main">
+                  <div class="video-info-items"><span class="video-info-itemtitle">导演：</span>
+                 	<div class="video-info-item video-info-actor"><span class="slash">/</span>
+					    <a href="/vsearch/--/director/%E9%A9%AC%E7%89%B9%C2%B7%E8%BE%BE%E8%8F%B2.html" target="_blank">马特·达菲</a><span class="slash">/</span><a href="/vsearch/--/director/%E7%BD%97%E6%96%AF%C2%B7%E8%BE%BE%E8%8F%B2.html" target="_blank">罗斯·达菲</a><span class="slash">/</span><a href="/vsearch/--/director/%E8%82%96%E6%81%A9%C2%B7%E5%88%A9%E7%BB%B4.html" target="_blank">肖恩·利维</a><span class="slash">/</span><a href="/vsearch/--/director/%E4%B9%8C%E5%A1%94%C2%B7%E5%B8%83%E9%87%8C%E5%85%B9%E7%BB%B4%E8%8C%A8.html" target="_blank">乌塔·布里兹维茨</a><span class="slash">/</span>						</div>
+                </div>
+                <div class="video-info-items"><span class="video-info-itemtitle">主演：</span>
+                 <div class="video-info-item video-info-actor"><span class="slash">/</span>
+						<a href="/vsearch/-%E8%96%87%E8%AF%BA%E5%A8%9C%C2%B7%E7%91%9E%E5%BE%B7-.html" target="_blank">薇诺娜·瑞德</a><span class="slash">/</span><a href="/vsearch/-%E5%A4%A7%E5%8D%AB%C2%B7%E5%93%88%E4%BC%AF-.html" target="_blank">大卫·哈伯</a><span class="slash">/</span><a href="/vsearch/-%E8%8F%B2%E6%81%A9%C2%B7%E4%BC%8D%E6%B3%95%E5%BE%B7-.html" target="_blank">菲恩·伍法德</a><span class="slash">/</span><a href="/vsearch/-%E7%B1%B3%E8%8E%89%C2%B7%E6%B3%A2%E6%AF%94%C2%B7%E5%B8%83%E6%9C%97-.html" target="_blank">米莉·波比·布朗</a><span class="slash">/</span><a href="/vsearch/-%E4%BC%BD%E5%A1%94%C2%B7%E9%A9%AC%E5%A1%94%E6%8B%89%E4%BD%90-.html" target="_blank">伽塔·马塔拉佐</a><span class="slash">/</span><a href="/vsearch/-%E5%87%AF%E8%8E%B1%E5%B8%83%C2%B7%E9%BA%A6%E5%85%8B%E5%8A%B3%E5%85%8B%E6%9E%97-.html" target="_blank">凯莱布·麦克劳克林</a><span class="slash">/</span><a href="/vsearch/-%E8%AF%BA%E4%BA%9A%C2%B7%E6%96%BD%E7%BA%B3%E6%99%AE-.html" target="_blank">诺亚·施纳普</a><span class="slash">/</span><a href="/vsearch/-%E8%90%A8%E8%BF%AA%C2%B7%E8%BE%9B%E5%85%8B-.html" target="_blank">萨迪·辛克</a><span class="slash">/</span><a href="/vsearch/-%E5%A8%9C%E5%A1%94%E8%8E%89%C2%B7%E6%88%B4%E5%B0%94-.html" target="_blank">娜塔莉·戴尔</a><span class="slash">/</span><a href="/vsearch/-%E6%9F%A5%E7%90%86%C2%B7%E5%B8%8C%E9%A1%BF-.html" target="_blank">查理·希顿</a><span class="slash">/</span><a href="/vsearch/-%E4%B9%94%C2%B7%E5%9F%BA%E7%91%9E-.html" target="_blank">乔·基瑞</a><span class="slash">/</span><a href="/vsearch/-%E6%88%B4%E5%85%8B%C2%B7%E8%92%99%E5%93%A5%E9%A9%AC%E5%88%A9-.html" target="_blank">戴克·蒙哥马利</a><span class="slash">/</span><a href="/vsearch/-%E7%8E%9B%E9%9B%85%C2%B7%E9%9C%8D%E5%85%8B-.html" target="_blank">玛雅·霍克</a><span class="slash">/</span><a href="/vsearch/-%E6%99%AE%E8%8E%89%E9%9B%85%C2%B7%E5%BC%97%E6%A0%BC%E6%A3%AE-.html" target="_blank">普莉雅·弗格森</a><span class="slash">/</span><a href="/vsearch/-%E5%8D%A1%E6%8B%89%C2%B7%E5%B8%83%E6%AC%A7%E8%AF%BA-.html" target="_blank">卡拉·布欧诺</a><span class="slash">/</span><a href="/vsearch/-%E8%A5%BF%E6%81%A9%C2%B7%E5%A5%A5%E6%96%AF%E6%B1%80-.html" target="_blank">西恩·奥斯汀</a><span class="slash">/</span><a href="/vsearch/-%E6%9D%B0%E5%85%8B%C2%B7%E5%B8%83%E5%A1%9E-.html" target="_blank">杰克·布塞</a><span class="slash">/</span><a href="/vsearch/-%E4%B9%94%C2%B7%E5%85%8B%E9%87%8C%E6%96%AF%E7%89%B9-.html" target="_blank">乔·克里斯特</a><span class="slash">/</span><a href="/vsearch/-%E5%87%AF%E7%91%9F%E7%90%B3%C2%B7%E7%A7%91%E5%BB%B7-.html" target="_blank">凯瑟琳·科廷</a><span class="slash">/</span><a href="/vsearch/-%E8%BF%88%E5%85%8B%E5%B0%94%C2%B7%E5%B8%95%E5%85%8B-.html" target="_blank">迈克尔·帕克</a><span class="slash">/</span><a href="/vsearch/-%E5%BC%97%E5%85%B0%E5%88%87%E4%B8%9D%E5%8D%A1%C2%B7%E9%9B%B7%E9%98%BF%E8%8E%B1-.html" target="_blank">弗兰切丝卡·雷阿莱</a><span class="slash">/</span><a href="/vsearch/-%E4%BA%9A%E5%8E%86%E5%85%8B%C2%B7%E4%B9%8C%E7%89%B9%E6%88%88%E5%A4%AB-.html" target="_blank">亚历克·乌特戈夫</a><span class="slash">/</span><a href="/vsearch/-%E5%8D%A1%E6%8B%89%C2%B7%E6%9B%BC%E6%B3%B0%E6%8B%89-.html" target="_blank">卡拉·曼泰拉</a><span class="slash">/</span><a href="/vsearch/-%E5%AE%89%E5%A6%AE%E6%96%AF%E9%A1%BF%C2%B7%E6%99%AE%E8%8E%B1%E6%96%AF-.html" target="_blank">安妮斯顿·普莱斯</a><span class="slash">/</span><a href="/vsearch/-%E5%A9%B7%E6%96%AF%E8%8E%89%C2%B7%E6%99%AE%E8%8E%B1%E6%96%AF-.html" target="_blank">婷斯莉·普莱斯</a><span class="slash">/</span><a href="/vsearch/-%E8%82%96%E6%81%A9%C2%B7%E7%B4%A2%E6%96%AF-.html" target="_blank">肖恩·索斯</a><span class="slash">/</span><a href="/vsearch/-%E5%8A%A0%E5%B8%83%E9%87%8C%E5%9F%83%E6%8B%89%C2%B7%E7%9A%AE%E4%BD%90%E7%BD%97-.html" target="_blank">加布里埃拉·皮佐罗</a><span class="slash">/</span>						</div>
+                </div>
+                  <div class="video-info-items"><span class="video-info-itemtitle">剧情：</span>
+                  <div class="video-info-item">故事发生在1985年的印第安纳州霍金斯镇，正值炎夏，学校放假了，镇上新开了一家购物中心，霍金斯小组成员也即将成年。情窦初开的同时，也使小组成员的动态变得更加复杂，他们必须找出一起长大的方法。与此同时，危险迫在眉睫。当小镇受到新旧敌人的威胁时，小十一和她的朋友们意识到 ，邪恶永远不会结束，它会一直存在…</div>
+                </div>
+              </div>
+              <div class="video-info-footer">
+                                  <a href="/video/2562-1-1.html" class="btn-important btn-base" title="立刻播放怪奇物语 第三季"><i class="icon-play"></i><strong>立即播放</strong></a>
+                               </div>
+            </div>
+          </div>  
+             
+                   <div class="module-search-item">
+            <div class="video-cover">
+              <div class="module-item-cover">
+                <div class="module-item-pic"><a href="/video/2561-1-1.html" title="立刻播放怪奇物语 第二季"><i class="icon-play"></i></a><img class="lazy lazyload" data-src="https://ps.ssl.qhmsg.com/t0287cf8a1169b766a5.jpg" src="https://ps.ssl.qhmsg.com/t0287cf8a1169b766a5.jpg" alt="怪奇物语 第二季">
+                  <div class="loading"></div>
+                </div>
+              </div>
+            </div>
+            <div class="video-info">
+              <div class="video-info-header"><a class="video-serial" href="/vdetail/2561.html" title="怪奇物语 第二季">全9集</a>
+                <h3><a href="/vdetail/2561.html" title="怪奇物语 第二季">怪奇物语 第二季</a></h3>
+                <div class="video-info-aux">
+                <a href="/list/2.html" title="电视剧" class="tag-link"><span class="video-tag-icon">
+                                         <i class="icon-cate-ds"></i>
+                      电视剧</span></a>
+                	<div class="tag-link"><a href="/vsearch/--/year/2017.html" target="_blank">2017</a>&nbsp;</div>
+                  <div class="tag-link"><a href="/vsearch/--/area/%E7%BE%8E%E5%9B%BD.html" target="_blank">美国</a>&nbsp;</div>
+                 </div>
+              </div>
+              <div class="video-info-main">
+                  <div class="video-info-items"><span class="video-info-itemtitle">导演：</span>
+                 	<div class="video-info-item video-info-actor"><span class="slash">/</span>
+					    <a href="/vsearch/--/director/%E9%A9%AC%E7%89%B9%C2%B7%E8%BE%BE%E8%8F%B2.html" target="_blank">马特·达菲</a><span class="slash">/</span><a href="/vsearch/--/director/%E7%BD%97%E6%96%AF%C2%B7%E8%BE%BE%E8%8F%B2.html" target="_blank">罗斯·达菲</a><span class="slash">/</span><a href="/vsearch/--/director/%E8%82%96%E6%81%A9%C2%B7%E5%88%A9%E7%BB%B4.html" target="_blank">肖恩·利维</a><span class="slash">/</span><a href="/vsearch/--/director/%E5%AE%89%E5%BE%B7%E9%B2%81%C2%B7%E6%96%AF%E5%9D%A6%E9%A1%BF.html" target="_blank">安德鲁·斯坦顿</a><span class="slash">/</span><a href="/vsearch/--/director/%E4%B8%BD%E8%B4%9D%E5%8D%A1%C2%B7%E6%89%98%E9%A9%AC%E6%96%AF.html" target="_blank">丽贝卡·托马斯</a><span class="slash">/</span>						</div>
+                </div>
+                <div class="video-info-items"><span class="video-info-itemtitle">主演：</span>
+                 <div class="video-info-item video-info-actor"><span class="slash">/</span>
+						<a href="/vsearch/-%E8%96%87%E8%AF%BA%E5%A8%9C%C2%B7%E7%91%9E%E5%BE%B7-.html" target="_blank">薇诺娜·瑞德</a><span class="slash">/</span><a href="/vsearch/-%E7%B1%B3%E8%8E%89%C2%B7%E6%B3%A2%E6%AF%94%C2%B7%E5%B8%83%E6%9C%97-.html" target="_blank">米莉·波比·布朗</a><span class="slash">/</span><a href="/vsearch/-%E5%A4%A7%E5%8D%AB%C2%B7%E5%93%88%E4%BC%AF-.html" target="_blank">大卫·哈伯</a><span class="slash">/</span><a href="/vsearch/-%E5%A8%9C%E5%A1%94%E8%8E%89%C2%B7%E6%88%B4%E5%B0%94-.html" target="_blank">娜塔莉·戴尔</a><span class="slash">/</span><a href="/vsearch/-%E8%AF%BA%E4%BA%9A%C2%B7%E6%96%BD%E7%BA%B3%E6%99%AE-.html" target="_blank">诺亚·施纳普</a><span class="slash">/</span><a href="/vsearch/-%E4%BC%BD%E5%A1%94%C2%B7%E9%A9%AC%E5%A1%94%E6%8B%89%E4%BD%90-.html" target="_blank">伽塔·马塔拉佐</a><span class="slash">/</span><a href="/vsearch/-%E8%8F%B2%E6%81%A9%C2%B7%E4%BC%8D%E6%B3%95%E5%BE%B7-.html" target="_blank">菲恩·伍法德</a><span class="slash">/</span><a href="/vsearch/-%E6%9F%A5%E7%90%86%C2%B7%E5%B8%8C%E9%A1%BF-.html" target="_blank">查理·希顿</a><span class="slash">/</span><a href="/vsearch/-%E5%87%AF%E8%8E%B1%E5%B8%83%C2%B7%E9%BA%A6%E5%85%8B%E5%8A%B3%E5%85%8B%E6%9E%97-.html" target="_blank">凯莱布·麦克劳克林</a><span class="slash">/</span><a href="/vsearch/-%E4%B9%94%C2%B7%E5%9F%BA%E7%91%9E-.html" target="_blank">乔·基瑞</a><span class="slash">/</span><a href="/vsearch/-%E5%8D%A1%E6%8B%89%C2%B7%E5%B8%83%E6%AC%A7%E8%AF%BA-.html" target="_blank">卡拉·布欧诺</a><span class="slash">/</span><a href="/vsearch/-%E8%A5%BF%E6%81%A9%C2%B7%E5%A5%A5%E6%96%AF%E6%B1%80-.html" target="_blank">西恩·奥斯汀</a><span class="slash">/</span><a href="/vsearch/-%E5%88%87%E5%B0%94%E8%A5%BF%C2%B7%E5%A1%94%E5%B0%94%E7%8E%9B%E7%90%AA-.html" target="_blank">切尔西·塔尔玛琪</a><span class="slash">/</span><a href="/vsearch/-%E4%B9%94%C2%B7%E5%85%8B%E9%87%8C%E6%96%AF%E7%89%B9-.html" target="_blank">乔·克里斯特</a><span class="slash">/</span><a href="/vsearch/-%E6%88%B4%E5%85%8B%C2%B7%E8%92%99%E5%93%A5%E9%A9%AC%E5%88%A9-.html" target="_blank">戴克·蒙哥马利</a><span class="slash">/</span><a href="/vsearch/-%E8%90%A8%E8%BF%AA%C2%B7%E8%BE%9B%E5%85%8B-.html" target="_blank">萨迪·辛克</a><span class="slash">/</span>						</div>
+                </div>
+                  <div class="video-info-items"><span class="video-info-itemtitle">剧情：</span>
+                  <div class="video-info-item">第2季与第1季联系紧密，两者时间节点相隔差不多一年。第2季开场发生在一年后的万圣节，地点依然是印第安纳州的小镇霍金斯，这几个小家伙打扮成抓鬼敢死队。四个萌童中最醒目的肯定是威尔，第一季结尾时他咳嗽时吐出了一条虫子，这显然是为后续剧情埋下的伏笔。制作人之一的马特·杜菲表示：“他似乎能够看到表里世界(t…</div>
+                </div>
+              </div>
+              <div class="video-info-footer">
+                                  <a href="/video/2561-1-1.html" class="btn-important btn-base" title="立刻播放怪奇物语 第二季"><i class="icon-play"></i><strong>立即播放</strong></a>
+                               </div>
+            </div>
+          </div>  
+             
+                   <div class="module-search-item">
+            <div class="video-cover">
+              <div class="module-item-cover">
+                <div class="module-item-pic"><a href="/video/2560-1-1.html" title="立刻播放怪奇物语 第一季"><i class="icon-play"></i></a><img class="lazy lazyload" data-src="https://p0.ssl.qhimgs1.com/t02950dd372c873d0e4.jpg" src="https://p0.ssl.qhimgs1.com/t02950dd372c873d0e4.jpg" alt="怪奇物语 第一季">
+                  <div class="loading"></div>
+                </div>
+              </div>
+            </div>
+            <div class="video-info">
+              <div class="video-info-header"><a class="video-serial" href="/vdetail/2560.html" title="怪奇物语 第一季">全8集</a>
+                <h3><a href="/vdetail/2560.html" title="怪奇物语 第一季">怪奇物语 第一季</a></h3>
+                <div class="video-info-aux">
+                <a href="/list/2.html" title="电视剧" class="tag-link"><span class="video-tag-icon">
+                                         <i class="icon-cate-ds"></i>
+                      电视剧</span></a>
+                	<div class="tag-link"><a href="/vsearch/--/year/2016.html" target="_blank">2016</a>&nbsp;</div>
+                  <div class="tag-link"><a href="/vsearch/--/area/%E7%BE%8E%E5%9B%BD.html" target="_blank">美国</a>&nbsp;</div>
+                 </div>
+              </div>
+              <div class="video-info-main">
+                  <div class="video-info-items"><span class="video-info-itemtitle">导演：</span>
+                 	<div class="video-info-item video-info-actor"><span class="slash">/</span>
+					    <a href="/vsearch/--/director/%E8%82%96%E6%81%A9%C2%B7%E5%88%A9%E7%BB%B4.html" target="_blank">肖恩·利维</a><span class="slash">/</span><a href="/vsearch/--/director/%E9%A9%AC%E7%89%B9%C2%B7%E8%BE%BE%E8%8F%B2.html" target="_blank">马特·达菲</a><span class="slash">/</span><a href="/vsearch/--/director/%E7%BD%97%E6%96%AF%C2%B7%E8%BE%BE%E8%8F%B2.html" target="_blank">罗斯·达菲</a><span class="slash">/</span>						</div>
+                </div>
+                <div class="video-info-items"><span class="video-info-itemtitle">主演：</span>
+                 <div class="video-info-item video-info-actor"><span class="slash">/</span>
+						<a href="/vsearch/-%E8%96%87%E8%AF%BA%E5%A8%9C%C2%B7%E7%91%9E%E5%BE%B7-.html" target="_blank">薇诺娜·瑞德</a><span class="slash">/</span><a href="/vsearch/-%E5%A4%A7%E5%8D%AB%C2%B7%E5%93%88%E4%BC%AF-.html" target="_blank">大卫·哈伯</a><span class="slash">/</span><a href="/vsearch/-%E8%8F%B2%E6%81%A9%C2%B7%E4%BC%8D%E6%B3%95%E5%BE%B7-.html" target="_blank">菲恩·伍法德</a><span class="slash">/</span><a href="/vsearch/-%E7%B1%B3%E8%8E%89%C2%B7%E6%B3%A2%E6%AF%94%C2%B7%E5%B8%83%E6%9C%97-.html" target="_blank">米莉·波比·布朗</a><span class="slash">/</span><a href="/vsearch/-%E4%BC%BD%E5%A1%94%C2%B7%E9%A9%AC%E5%A1%94%E6%8B%89%E4%BD%90-.html" target="_blank">伽塔·马塔拉佐</a><span class="slash">/</span><a href="/vsearch/-%E5%87%AF%E8%8E%B1%E5%B8%83%C2%B7%E9%BA%A6%E5%85%8B%E5%8A%B3%E5%85%8B%E6%9E%97-.html" target="_blank">凯莱布·麦克劳克林</a><span class="slash">/</span><a href="/vsearch/-%E5%A8%9C%E5%A1%94%E8%8E%89%C2%B7%E6%88%B4%E5%B0%94-.html" target="_blank">娜塔莉·戴尔</a><span class="slash">/</span><a href="/vsearch/-%E6%9F%A5%E7%90%86%C2%B7%E5%B8%8C%E9%A1%BF-.html" target="_blank">查理·希顿</a><span class="slash">/</span><a href="/vsearch/-%E5%8D%A1%E6%8B%89%C2%B7%E5%B8%83%E6%AC%A7%E8%AF%BA-.html" target="_blank">卡拉·布欧诺</a><span class="slash">/</span><a href="/vsearch/-%E9%A9%AC%E4%BF%AE%C2%B7%E8%8E%AB%E8%BF%AA%E6%81%A9-.html" target="_blank">马修·莫迪恩</a><span class="slash">/</span><a href="/vsearch/-%E4%B9%94%C2%B7%E5%9F%BA%E7%91%9E-.html" target="_blank">乔·基瑞</a><span class="slash">/</span><a href="/vsearch/-%E7%BD%97%E5%B8%83%C2%B7%E6%91%A9%E6%A0%B9-.html" target="_blank">罗布·摩根</a><span class="slash">/</span><a href="/vsearch/-%E7%BA%A6%E7%BF%B0%C2%B7%E9%9B%B7%E8%AF%BA%E5%85%B9-.html" target="_blank">约翰·雷诺兹</a><span class="slash">/</span><a href="/vsearch/-%E4%B9%94%C2%B7%E5%85%8B%E9%87%8C%E6%96%AF%E7%89%B9-.html" target="_blank">乔·克里斯特</a><span class="slash">/</span><a href="/vsearch/-%E8%AF%BA%E4%BA%9A%C2%B7%E6%96%BD%E7%BA%B3%E6%99%AE-.html" target="_blank">诺亚·施纳普</a><span class="slash">/</span><a href="/vsearch/-%E9%A9%AC%E5%85%8B%C2%B7%E6%96%AF%E8%BE%BE%E6%A0%BC-.html" target="_blank">马克·斯达格</a><span class="slash">/</span><a href="/vsearch/-%E5%85%B0%E5%BE%B7%E5%B0%94%C2%B7P%C2%B7%E6%B5%B7%E6%96%87%E6%96%AF-.html" target="_blank">兰德尔·P·海文斯</a><span class="slash">/</span><a href="/vsearch/-%E6%89%98%E6%AF%94%E4%BA%9A%E6%96%AF%C2%B7%E8%80%B6%E5%88%A9%E5%86%85%E5%85%8B-.html" target="_blank">托比亚斯·耶利内克</a><span class="slash">/</span><a href="/vsearch/-%E8%8B%8F%E7%8F%8A%C2%B7%E6%B2%99%E5%B0%94%E9%9C%8D%E5%B8%83%C2%B7%E6%8B%89%E9%87%91-.html" target="_blank">苏珊·沙尔霍布·拉金</a><span class="slash">/</span><a href="/vsearch/-%E5%87%AF%E8%90%A8%E7%90%B3%C2%B7%E6%88%B4%E5%B0%94-.html" target="_blank">凯萨琳·戴尔</a><span class="slash">/</span><a href="/vsearch/-%E5%AE%89%E5%A6%AE%E6%96%AF%E9%A1%BF%C2%B7%E6%99%AE%E8%8E%B1%E6%96%AF-.html" target="_blank">安妮斯顿·普莱斯</a><span class="slash">/</span><a href="/vsearch/-%E5%A9%B7%E6%96%AF%E8%8E%89%C2%B7%E6%99%AE%E8%8E%B1%E6%96%AF-.html" target="_blank">婷斯莉·普莱斯</a><span class="slash">/</span><a href="/vsearch/-%E4%BD%A9%E9%A1%BF%C2%B7%E5%A8%81%E5%A5%87-.html" target="_blank">佩顿·威奇</a><span class="slash">/</span><a href="/vsearch/-%E7%BD%97%E6%96%AF%C2%B7%E5%B8%95%E7%89%B9%E9%87%8C%E5%A5%87-.html" target="_blank">罗斯·帕特里奇</a><span class="slash">/</span><a href="/vsearch/-%E8%89%BE%E7%B1%B3%C2%B7%E7%A9%86%E6%9E%97%E6%96%AF-.html" target="_blank">艾米·穆林斯</a><span class="slash">/</span><a href="/vsearch/-%E5%85%8B%E9%87%8C%E6%96%AF%C2%B7%E6%B2%99%E5%88%A9%E6%96%87-.html" target="_blank">克里斯·沙利文</a><span class="slash">/</span><a href="/vsearch/-%E6%9C%97%C2%B7%E7%BD%97%26hellip%3B-.html" target="_blank">朗·罗…</a><span class="slash">/</span>						</div>
+                </div>
+                  <div class="video-info-items"><span class="video-info-itemtitle">剧情：</span>
+                  <div class="video-info-item">《怪奇物语》：向征服了一代人的 80 年代经典作品致敬。《怪奇物语》以 1983 年的印第安纳州为背景，一个小男孩莫名其妙地消失了。当朋友、家人和当地警察寻找答案时，他们都被卷入一个非同寻常的谜团，其中涉及绝密的政府实验、恐怖的超自然力量，还有一个非常奇怪的小女孩。 &nbsp;</div>
+                </div>
+              </div>
+              <div class="video-info-footer">
+                                  <a href="/video/2560-1-1.html" class="btn-important btn-base" title="立刻播放怪奇物语 第一季"><i class="icon-play"></i><strong>立即播放</strong></a>
+                               </div>
+            </div>
+          </div>  
+             
+                   <div class="module-search-item">
+            <div class="video-cover">
+              <div class="module-item-cover">
+                <div class="module-item-pic"><a href="/video/3734-1-1.html" title="立刻播放怪奇物语 第四季"><i class="icon-play"></i></a><img class="lazy lazyload" data-src="https://ailab-huawei-cdn.nolibox.com/upload/images/e96652f828afa4ad9389e98bd3654678.jpeg" src="https://ailab-huawei-cdn.nolibox.com/upload/images/e96652f828afa4ad9389e98bd3654678.jpeg" alt="怪奇物语 第四季">
+                  <div class="loading"></div>
+                </div>
+              </div>
+            </div>
+            <div class="video-info">
+              <div class="video-info-header"><a class="video-serial" href="/vdetail/3734.html" title="怪奇物语 第四季">全9集</a>
+                <h3><a href="/vdetail/3734.html" title="怪奇物语 第四季">怪奇物语 第四季</a></h3>
+                <div class="video-info-aux">
+                <a href="/list/2.html" title="电视剧" class="tag-link"><span class="video-tag-icon">
+                                         <i class="icon-cate-ds"></i>
+                      电视剧</span></a>
+                	<div class="tag-link"><a href="/vsearch/--/year/2022.html" target="_blank">2022</a>&nbsp;</div>
+                  <div class="tag-link"><a href="/vsearch/--/area/%E7%BE%8E%E5%9B%BD.html" target="_blank">美国</a>&nbsp;</div>
+                 </div>
+              </div>
+              <div class="video-info-main">
+                  <div class="video-info-items"><span class="video-info-itemtitle">导演：</span>
+                 	<div class="video-info-item video-info-actor"><span class="slash">/</span>
+					    <a href="/vsearch/--/director/%E9%A9%AC%E7%89%B9%C2%B7%E8%BE%BE%E8%8F%B2.html" target="_blank">马特·达菲</a><span class="slash">/</span><a href="/vsearch/--/director/%E7%BD%97%E6%96%AF%C2%B7%E8%BE%BE%E8%8F%B2.html" target="_blank">罗斯·达菲</a><span class="slash">/</span><a href="/vsearch/--/director/%E8%82%96%E6%81%A9%C2%B7%E5%88%A9%E7%BB%B4.html" target="_blank">肖恩·利维</a><span class="slash">/</span><a href="/vsearch/--/director/%E5%B0%BC%E5%A7%86%E7%BD%97%E5%BE%B7%C2%B7%E5%AE%89%E9%99%B6%E5%B0%94.html" target="_blank">尼姆罗德·安陶尔</a><span class="slash">/</span>						</div>
+                </div>
+                <div class="video-info-items"><span class="video-info-itemtitle">主演：</span>
+                 <div class="video-info-item video-info-actor"><span class="slash">/</span>
+						<a href="/vsearch/-%E7%B1%B3%E8%8E%89%C2%B7%E6%B3%A2%E6%AF%94%C2%B7%E5%B8%83%E6%9C%97-.html" target="_blank">米莉·波比·布朗</a><span class="slash">/</span><a href="/vsearch/-%E8%96%87%E8%AF%BA%E5%A8%9C%C2%B7%E7%91%9E%E5%BE%B7-.html" target="_blank">薇诺娜·瑞德</a><span class="slash">/</span><a href="/vsearch/-%E5%A4%A7%E5%8D%AB%C2%B7%E5%93%88%E4%BC%AF-.html" target="_blank">大卫·哈伯</a><span class="slash">/</span><a href="/vsearch/-%E8%8F%B2%E6%81%A9%C2%B7%E4%BC%8D%E6%B3%95%E5%BE%B7-.html" target="_blank">菲恩·伍法德</a><span class="slash">/</span><a href="/vsearch/-%E4%BC%BD%E5%A1%94%C2%B7%E9%A9%AC%E5%A1%94%E6%8B%89%E4%BD%90-.html" target="_blank">伽塔·马塔拉佐</a><span class="slash">/</span><a href="/vsearch/-%E5%87%AF%E8%8E%B1%E5%B8%83%C2%B7%E9%BA%A6%E5%85%8B%E5%8A%B3%E5%85%8B%E6%9E%97-.html" target="_blank">凯莱布·麦克劳克林</a><span class="slash">/</span><a href="/vsearch/-%E8%AF%BA%E4%BA%9A%C2%B7%E6%96%BD%E7%BA%B3%E6%99%AE-.html" target="_blank">诺亚·施纳普</a><span class="slash">/</span><a href="/vsearch/-%E8%90%A8%E8%BF%AA%C2%B7%E8%BE%9B%E5%85%8B-.html" target="_blank">萨迪·辛克</a><span class="slash">/</span><a href="/vsearch/-%E5%A8%9C%E5%A1%94%E8%8E%89%C2%B7%E6%88%B4%E5%B0%94-.html" target="_blank">娜塔莉·戴尔</a><span class="slash">/</span><a href="/vsearch/-%E6%9F%A5%E7%90%86%C2%B7%E5%B8%8C%E9%A1%BF-.html" target="_blank">查理·希顿</a><span class="slash">/</span><a href="/vsearch/-%E4%B9%94%C2%B7%E5%9F%BA%E7%91%9E-.html" target="_blank">乔·基瑞</a><span class="slash">/</span><a href="/vsearch/-%E7%8E%9B%E9%9B%85%C2%B7%E9%9C%8D%E5%85%8B-.html" target="_blank">玛雅·霍克</a><span class="slash">/</span><a href="/vsearch/-%E6%9D%B0%E7%B1%B3%C2%B7%E5%9D%8E%E8%B4%9D%E5%B0%94%C2%B7%E9%B2%8D%E5%B0%94-.html" target="_blank">杰米·坎贝尔·鲍尔</a><span class="slash">/</span><a href="/vsearch/-%E5%B8%83%E4%BC%A6%E7%89%B9%C2%B7%E5%90%89%E5%B0%94%E6%9B%BC-.html" target="_blank">布伦特·吉尔曼</a><span class="slash">/</span><a href="/vsearch/-%E6%99%AE%E8%8E%89%E9%9B%85%C2%B7%E5%BC%97%E6%A0%BC%E6%A3%AE-.html" target="_blank">普莉雅·弗格森</a><span class="slash">/</span><a href="/vsearch/-%E9%A9%AC%E4%BF%AE%C2%B7%E8%8E%AB%E8%BF%AA%E6%81%A9-.html" target="_blank">马修·莫迪恩</a><span class="slash">/</span><a href="/vsearch/-%E4%BF%9D%E7%BD%97%C2%B7%E9%9B%B7%E7%91%9F-.html" target="_blank">保罗·雷瑟</a><span class="slash">/</span><a href="/vsearch/-%E6%88%B4%E5%85%8B%C2%B7%E8%92%99%E5%93%A5%E9%A9%AC%E5%88%A9-.html" target="_blank">戴克·蒙哥马利</a><span class="slash">/</span><a href="/vsearch/-%E6%B1%A4%E5%A7%86%C2%B7%E6%8B%89%E6%96%AF%E9%BD%90%E5%93%88-.html" target="_blank">汤姆·拉斯齐哈</a><span class="slash">/</span><a href="/vsearch/-%E8%89%BE%E7%B1%B3%E8%B4%9D%E4%B8%9D%C2%B7%E9%BA%A6%E5%85%8B%E7%BA%B3%E5%B0%94%E8%92%82-.html" target="_blank">艾米贝丝·麦克纳尔蒂</a><span class="slash">/</span><a href="/vsearch/-%E7%BD%97%E6%A0%B9%C2%B7%E8%8E%B1%E5%88%A9%C2%B7%E5%B8%83%E9%B2%81%E7%BA%B3-.html" target="_blank">罗根·莱利·布鲁纳</a><span class="slash">/</span><a href="/vsearch/-%E5%8D%A1%E6%8B%89%C2%B7%E5%B8%83%E6%AC%A7%E8%AF%BA-.html" target="_blank">卡拉·布欧诺</a><span class="slash">/</span><a href="/vsearch/-%E4%B9%94%C2%B7%E5%85%8B%E9%87%8C%E6%96%AF%E7%89%B9-.html" target="_blank">乔·克里斯特</a><span class="slash">/</span><a href="/vsearch/-%E5%87%AF%E7%91%9F%E7%90%B3%C2%B7%E7%A7%91%E5%BB%B7-.html" target="_blank">凯瑟琳·科廷</a><span class="slash">/</span><a href="/vsearch/-%E6%A2%85%E6%A3%AE%C2%B7%E6%88%B4%E4%BC%8A-.html" target="_blank">梅森·戴伊</a><span class="slash">/</span><a href="/vsearch/-%E7%BD%97%E5%B8%83%C2%B7%E6%91%A9%E6%A0%B9-.html" target="_blank">罗布·摩根</a><span class="slash">/</span><a href="/vsearch/-%E7%BA%A6%E7%BF%B0%C2%B7%E9%9B%B7%E8%AF%BA%E5%85%B9-.html" target="_blank">约翰·雷诺兹</a><span class="slash">/</span><a href="/vsearch/-%26hellip%3B-.html" target="_blank">…</a><span class="slash">/</span>						</div>
+                </div>
+                  <div class="video-info-items"><span class="video-info-itemtitle">剧情：</span>
+                  <div class="video-info-item">星庭之战已经过去六个月，那场战役给霍金斯镇带来了灭顶之灾，自此以后人心惶惶。在想尽各种办法之后，我们这群朋友们首次各奔东西，他们努力应对复杂的高中生活，但这并没有让事情变得更容易。在这个最脆弱的时代，一个可怕的全新超自然威胁浮出水面，并抛出了一个可怕的谜题，如果能够解开这个谜题，就可能从彻底终结恐怖…</div>
+                </div>
+              </div>
+              <div class="video-info-footer">
+                                  <a href="/video/3734-1-1.html" class="btn-important btn-base" title="立刻播放怪奇物语 第四季"><i class="icon-play"></i><strong>立即播放</strong></a>
+                               </div>
+            </div>
+          </div>  
+             
+            </div>
+              <!-- 分页 -->
+        
+             </div>
+         </div>
+      </div>
+</main>
+
+    <footer id="footer" class="wrapper ">
+	<p class="sitemap"><img src="/mvstatic/picture/logo.png" height="10">
+		 		<a target="_blank" href="/label/about.html">关于</a><span class="space-line-bold"></span>
+				<a target="_blank" href="/label/top.html">排行榜</a><span class="space-line-bold"></span>
+				<a target="_blank" href="/map.html">MAP</a><span class="space-line-bold"></span>
+		<a target="_blank" href="/rss/index.xml">RSS</a><span class="space-line-bold"></span>
+		<a target="_blank" href="/rss/baidu.xml">Baidu</a><span class="space-line-bold"></span>
+		<a target="_blank" href="/rss/baidu.xml">Google</a><span class="space-line-bold"></span>
+		<a target="_blank" href="/rss/bing.xml">Bing</a><span class="space-line-bold"></span>
+		<a target="_blank" href="/rss/so.xml">so</a><span class="space-line-bold"></span>
+		<a target="_blank" href="/rss/sogou.xml">Sogou</a><span class="space-line-bold"></span>
+		<a target="_blank" href="/rss/sm.xml">SM</a>
+	</p>
+	<p>本站所有内容均来自互联网分享站点所提供的公开引用资源，未提供资源上传、存储服务。</p>
+	    <!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S46ZWGRJFM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S46ZWGRJFM');
+</script></footer>
+
+
+<div class="fixed_right_bar">
+  <div class="mx-lrmenu">  
+ <div class="ant-back-top dbicon" style="display:none;">
+	 <i class="iconfont icon-a-zhiding5"></i>	
+</div>   
+  <div class="dbicon" id="clothes" onclick="clothesChange();">
+ 
+<i class="iconfont icon-a-yejian2"></i>
+</div>
+<div class="dbicon ly">
+<a href="/gbook.html"><i class="iconfont icon-a-pinglun"></i></a>
+</div>
+<div class="dbicon">
+<a href="/zhuanti.html"><i class="iconfont icon-zhuanti-2"></i></a>
+</div>
+</div>
+<div class="moremeum">
+	    <i class="iconfont icon-a-gengduo1"></i>
+	</div>
+</div>
+
+<script type="text/javascript">
+    $("#clothes").on('click',function () {
+        $(this).children(".iconfont").toggleClass("icon-rijianmoshi");
+        $(this).children(".iconfont").toggleClass("icon-a-yejian2")
+    });
+ </script>
+
+<div class="popup" id="note" style="display: block;">
+	<!--<div class="popup-icon"><img src="/mvstatic/picture/backhome.svg"></div>-->
+	<div class="popup-header">
+		<h3 class="popup-title">公告内容</h3>
+	</div>
+	<div class="popup-main">
+		<h3>收藏永久网址，防止网址屏蔽丢失</h3>
+<p>永久网址：<a href="https://ziziys.info" target="_blank">ziziys.info</a></p>
+<p>最新域名：<a href="https://www.ziziys.org" target="_blank">www.ziziys.org</a></p>备用域名：<a href="https://www.ziziys.net" target="_blank">www.ziziys.net</a><p></p>
+<p>最新官网：<a href="https://www.ziziys.com" target="_blank">www.ziziys.com</a></p>
+	</div>
+	<div class="popup-footer"><span class="popup-btn" onclick="closeclick()">我记住啦</span></div>
+</div>
+ <!-- 弹窗公告-->
+  
+<div class="popup popup-notice none">
+	<div class="popup-icon"><img src="/mvstatic/picture/backhome.svg"></div>
+	<div class="popup-header">
+		<h3 class="popup-title">域名列表</h3></div>
+	<div class="popup-main">
+		<p>
+			<a><strong>www.ziziys.org</strong></a><br>
+		   				<a><strong>www.ziziys.org</strong></a><br>
+						<a><strong>www.ziziys.info</strong></a><br>
+						<a><strong>www.ziziys.net</strong></a><br>
+						<a><strong>www.ziziys.com</strong></a><br>
+					</p>
+	</div>
+	<div class="popup-footer">
+		<a href="/label/web.html" class="popup-btn-o">查看全部域名</a>
+	</div>
+	<div class="close-popup" id="close-popup"><i class="icon-close-o"></i></div>
+</div> <!-- 网址-->
+
+
+<script type="text/javascript">   
+	document.onkeydown=function(){
+	    
+		var e = window.event||arguments[0];
+		
+	     	}
+  </script>
+<div class="shortcuts-mobile-overlay"></div>
+<script src="/mvstatic/js/mxhtml.js"></script>
+ <script src="/mvstatic/js/mxui.js"></script>
+	 <!-- 底部广告位 --> <!-- 底部-->
+<script>
+  $(".mac_total").text('5');
+</script>
+ 
+</body></html>

@@ -1,0 +1,16 @@
+search_items=6
+  [0] 怪奇物语 第五季 => /detail/714893052.html
+  [1] 怪奇物语 第五季 => /detail/714893042.html
+  [2] 怪奇物语 第四季 => /detail/714893055.html
+  [3] 怪奇物语 第二季 => /detail/714893053.html
+  [4] 怪奇物语 第三季 => /detail/714893054.html
+  [5] 怪奇物语 第一季 => /detail/714893051.html
+roads=4
+  road[0]=播放列表1 episodes=8
+    ep1=第01集 => /play/714893052-4-1.html
+  road[1]=播放列表2 episodes=3
+    ep1=1-4集.4K => /play/714893052-3-1.html
+  road[2]=播放列表3 episodes=3
+    ep1=1-4集.4K => /play/714893052-1-1.html
+  road[3]=播放列表4 episodes=3
+    ep1=1-4集.4K => /play/714893052-2-1.html

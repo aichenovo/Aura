@@ -1,0 +1,20 @@
+{
+  "api": "5",
+  "type": "tv",
+  "name": "4K影视",
+  "version": "1.0",
+  "muliSources": true,
+  "useWebview": true,
+  "useWebviewForPages": false,
+  "useNativePlayer": true,
+  "useLegacyParser": false,
+  "userAgent": "",
+  "referer": "https://www.4kvm.net/",
+  "baseURL": "https://www.4kvm.net",
+  "searchURL": "https://www.4kvm.net/xssearch?s=@keyword",
+  "searchList": "//article",
+  "searchName": ".//div[@class='title']/a/text()",
+  "searchResult": ".//div[@class='title']/a/@href",
+  "chapterRoads": "//div[@class='sourcelist']",
+  "chapterResult": ".//div[@class='jujiepisodios']/a"
+}

@@ -1,0 +1,10 @@
+search_items=5
+  [0] 怪奇物语 第五季 => /vdetail/5706.html
+  [1] 怪奇物语 第三季 => /vdetail/2562.html
+  [2] 怪奇物语 第二季 => /vdetail/2561.html
+  [3] 怪奇物语 第一季 => /vdetail/2560.html
+  [4] 怪奇物语 第四季 => /vdetail/3734.html
+roads=1
+  road[0]=播放列表1 episodes=8
+    ep1=第1集 => /video/5706-1-1.html
+    ep2=第2集 => /video/5706-1-2.html

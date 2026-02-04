@@ -1,0 +1,20 @@
+{
+  "api": "5",
+  "type": "tv",
+  "name": "3Q影视",
+  "version": "1.0",
+  "muliSources": true,
+  "useWebview": true,
+  "useWebviewForPages": false,
+  "useNativePlayer": true,
+  "useLegacyParser": false,
+  "userAgent": "",
+  "referer": "https://qqqys.com/",
+  "baseURL": "https://qqqys.com",
+  "searchURL": "https://qqqys.com/vodsearch/@keyword--.html?direct=1",
+  "searchList": "//main//div[contains(@class,'grid')]/div[contains(@class,'p-2')]",
+  "searchName": ".//strong",
+  "searchResult": ".//a[starts-with(@href,'/vd/')]",
+  "chapterRoads": "//div[@id='play-list']",
+  "chapterResult": ".//a"
+}

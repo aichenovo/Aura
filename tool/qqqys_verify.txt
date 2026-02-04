@@ -1,0 +1,11 @@
+search_items=6
+  [0] 怪奇物语 第一季 => /vd/10884.html
+  [1] 怪奇物语 第四季 => /vd/10885.html
+  [2] 怪奇物语 第二季 => /vd/10886.html
+  [3] 怪奇物语 第三季 => /vd/10888.html
+  [4] 怪奇物语 第五季 => /vd/86415.html
+roads=2
+  road[0]=NB蓝光 episodes=8
+    ep1=第1集 => /vb/10884.html#sid=2&nid=1
+  road[1]=YY蓝光 episodes=8
+    ep1=第1集 => /vb/10884.html#sid=1&nid=1

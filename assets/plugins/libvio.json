@@ -1,0 +1,21 @@
+{
+  "api": "5",
+  "type": "tv",
+  "name": "LIBVIO",
+  "version": "1.0",
+  "muliSources": true,
+  "useWebview": true,
+  "useWebviewForPages": false,
+  "useNativePlayer": true,
+  "useLegacyParser": false,
+  "userAgent": "",
+  "referer": "https://www.libvio.site/",
+  "baseURL": "https://www.libvio.site",
+  "searchURL": "https://www.libvio.site/search/-------------.html?wd=@keyword",
+  "searchList": "//ul[contains(@class,'stui-vodlist')]/li",
+  "searchName": ".//h4[contains(@class,'title')]/a",
+  "searchResult": ".//a[contains(@class,'stui-vodlist__thumb')]",
+  "chapterRoads": "//div[contains(@class,'stui-vodlist__head')]",
+  "chapterResult": ".//ul[contains(@class,'stui-content__playlist')]/li/a"
+}
+

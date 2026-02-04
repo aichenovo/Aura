@@ -1,0 +1,10 @@
+search_items=20
+  [0] 怪奇物语第五季 => /movie/4123.html
+  [1] 怪奇物语 第二季 => /movie/6307.html
+  [2] 怪奇物语 第三季 => /movie/6309.html
+  [3] 怪奇物语第四季 => /movie/2056.html
+  [4] 怪奇物语 第一季 => /movie/6305.html
+  [5] 怪奇宅 => /movie/7948.html
+roads=1
+  road[0]=播放列表1 episodes=8
+    ep1=第1集 => https://www.czzymovie.com/v_play/bXZfNDEyMy1ubV8x.html

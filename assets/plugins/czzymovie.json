@@ -1,0 +1,20 @@
+{
+  "api": "5",
+  "type": "tv",
+  "name": "厂长资源",
+  "version": "1.1",
+  "muliSources": true,
+  "useWebview": true,
+  "useWebviewForPages": true,
+  "useNativePlayer": true,
+  "useLegacyParser": false,
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+  "referer": "https://www.czzymovie.com/",
+  "baseURL": "https://www.czzymovie.com",
+  "searchURL": "https://www.czzymovie.com/boss1O1?q=@keyword",
+  "searchList": "//div[contains(@class,'search_list')]//ul/li",
+  "searchName": ".//h3[contains(@class,'dytit')]/a",
+  "searchResult": ".//h3[contains(@class,'dytit')]/a",
+  "chapterRoads": "//div[contains(@class,'paly_list_btn')]",
+  "chapterResult": ".//a"
+}

@@ -1,0 +1,1360 @@
+<html lang="zh-CN"><head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="referrer" content="no-referrer">
+<link rel="stylesheet" href="/template/dist/asset/css/v49464.css">
+<script src="/template/dist/asset/js/v49464.js"></script>
+<script src="/template/dist/asset/js/alpine.js" defer=""></script>
+<script defer="" src="https://c.qqqys.com/script.js" data-website-id="91083c7f-3686-48ab-8126-ebe0062c2f4b"></script>
+<!-- <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+<script>
+  // VConsole 默认会挂载到 `window.VConsole` 上
+  var vConsole = new window.VConsole();
+</script> -->
+
+
+  <title>3Q影视-qqq影视</title>
+  <meta name="keywords" content="3Q影视下载，3Q影视APP下载，3QAPP下载无需vip免费观影,在线免费追剧,免费追剧不用会员,无需注册免费观影,免费视频网站推荐">
+  <meta name="description" content="专业免费观影平台，提供最新最快的视频分享数据，高清电影电视剧免费观看，无需VIP会员，支持在线追剧，最新影视资源实时更新">
+</head>
+
+
+<body class="bg-slate-800 md:bg-black">
+  <header class="w-full bg-slate-800 border-b border-slate-700/50  relative md:bg-gray-900 md:block md:fixed md:top-0" style="z-index: 1001;">
+  <div class="container mx-auto max-w-7xl px-1 py-3 flex items-center justify-between">
+    <h1>
+      <a href="/" title="3Q影视-qqq影视" class="text-[#facc15] text-xl font-bold">
+        <span>3Q影视</span>
+      </a>
+    </h1>
+    <nav class="hidden md:block md:mx-2">
+      <ul class="flex">
+                <li class="mx-1 border border-transparent rounded-md  hover:border-yellow-400 hover:text-yellow-400 ">
+          <a href="/vodshow/1.html" class="p-1 lg:px-3">
+            电影          </a>
+        </li>
+                <li class="mx-1 border border-transparent rounded-md  hover:border-yellow-400 hover:text-yellow-400 ">
+          <a href="/vodshow/2.html" class="p-1 lg:px-3">
+            剧集          </a>
+        </li>
+                <li class="mx-1 border border-transparent rounded-md  hover:border-yellow-400 hover:text-yellow-400 ">
+          <a href="/vodshow/3.html" class="p-1 lg:px-3">
+            动漫          </a>
+        </li>
+                <li class="mx-1 border border-transparent rounded-md  hover:border-yellow-400 hover:text-yellow-400 ">
+          <a href="/vodshow/4.html" class="p-1 lg:px-3">
+            综艺          </a>
+        </li>
+                <li class="mx-1 border border-transparent rounded-md  hover:border-yellow-400 hover:text-yellow-400 ">
+            <a href="/label/rank.html" class="p-1 lg:px-3">
+          排行榜
+          </a>
+        </li>
+        <li class="mx-1 border border-transparent rounded-md  hover:border-yellow-400 hover:text-yellow-400 ">
+            <a href="/label/topic.html" class="p-1 lg:px-3">
+          专题
+          </a>
+        </li>
+        <li class="mx-1 border border-transparent rounded-md  hover:border-yellow-400 hover:text-yellow-400 ">
+            <a href="/label/faq.html" class="p-1 lg:px-3">
+          问答
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="flex-1 max-w-md mx-2" x-data="searchBox()">
+      <!-- 全屏Loading遮罩 -->
+      <div x-show="showLoading" class="fixed z-[100000] flex items-center justify-center" style="inset: 0px; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); display: none;">
+        <div class="flex flex-col items-center space-y-4">
+          <div class="h-12 w-12 animate-spin rounded-full border-4 border-white" style="border-top-color: transparent;"></div>
+          <div class="text-white text-lg font-semibold">正在搜索...</div>
+        </div>
+      </div>
+      
+      <!-- 搜索结果覆盖层 -->
+      <div x-show="searchResultsVisible" class="fixed z-[99999] bg-black overflow-y-auto" style="inset: 0px; width: 100%; height: 100%; display: none;">
+        <!-- 关闭按钮 -->
+        <button @click="closeSearch()" class="fixed top-4 right-4 z-[100000] w-10 h-10 rounded-full flex items-center justify-center text-white text-xl md:hidden" style="background-color: rgba(55, 65, 81, 0.2); pointer-events: auto;" @mouseover="$el.style.backgroundColor='rgba(55, 65, 81, 0.3)'" @mouseout="$el.style.backgroundColor='rgba(55, 65, 81, 0.2)'">
+                <i class="icon-close text-sm"></i>
+              </button>
+        
+        <!-- 搜索结果内容 -->
+        <div x-html="searchHtml"></div>
+      </div>
+      
+      <div :class="isMobileOpen ? 'fixed top-0 left-0 w-screen h-screen z-[9999] bg-slate-800 pt-[12px] pr-2 pb-0 pl-2 flex flex-col m-0' : 'relative'" class="relative">
+        <div class="group relative z-50 flex h-10 items-center overflow-hidden text-gray-300 transition-all duration-300 ease-in-out rounded-[20px] bg-slate-600" :class="isOpen &amp;&amp; !isMobileOpen ? 'rounded-t-[20px] rounded-b-none bg-slate-800' : 'rounded-[20px] bg-slate-600'">
+          <input x-model="keyword" :placeholder="hotPlaceholder" @click="handleSearchInputClick()" @input="handleInputChange()" @keyup.enter="handleEnterKey()" @keydown.up="handleArrowUp($event)" @keydown.down="handleArrowDown($event)" @keyup.escape="handleEscape()" type="search" enterkeyhint="search" autocomplete="off" class="h-10 w-full bg-transparent text-white placeholder:text-gray-400 py-1.5 pl-4 pr-12 outline-none" :class="{'flex-1': isMobileOpen}" placeholder="小城大事">
+          <button @click="submitSearch()" class="absolute right-0 h-full w-8 flex items-center outline-none border-none" :class="{'right-[40px]': isMobileOpen}" style="outline: none; border: none;">
+            <i class="icon-search"></i>
+          </button>
+          <button x-show="isMobileOpen" @click="handleCancel()" class="text-sm px-2 outline-none border-none" type="button" style="outline: none; border: none; display: none;">
+            取消
+          </button>
+        </div>
+          <div x-show="isOpen" @click.outside="handleOutsideClick" class="absolute left-0 w-full bg-slate-800 rounded-b-[20px] z-40 text-sm text-gray-300 overflow-y-auto overscroll-contain shadow-xl top-10 max-h-[70vh]" :class="isMobileOpen ? 'top-[49px] h-[calc(100vh-60px)] pb-safe' : ((autocompleteSuggestions.length &gt; 0 || !keyword.trim()) ? 'top-10 max-h-[70vh]' : 'top-10')" style="scrollbar-width: thin; scrollbar-color: rgb(74, 85, 104) rgb(45, 55, 72); display: none;">
+
+            <!-- 联想搜索建议 -->
+            <div x-show="autocompleteSuggestions.length &gt; 0" class="mb-4" :class="{'pb-64': isMobile}" style="display: none;">
+              <ul class="space-y-2">
+                <template x-for="(suggestion, index) in autocompleteSuggestions" :key="suggestion.id">
+                  <li class="py-2 px-4 hover:bg-white/10 hover:text-white transition cursor-pointer rounded-lg relative" :class="{'bg-white/20 text-white': selectedIndex == index}" @click="selectSuggestion(suggestion)">
+                    <div class="flex items-center justify-between">
+                      <span x-text="suggestion.name"></span>
+                      <span x-text="suggestion.type" class="ml-2 px-1.5 py-0.5 text-xs bg-blue-500/60 text-white rounded text-center font-normal"></span>
+                    </div>
+                    <div class="text-xs text-gray-400 mt-1" x-show="(suggestion.year &amp;&amp; suggestion.year != '0') || suggestion.actor">
+                      <span x-show="suggestion.year &amp;&amp; suggestion.year != '0'" x-text="suggestion.year"></span>
+                      <span x-show="suggestion.year &amp;&amp; suggestion.year != '0' &amp;&amp; suggestion.actor" class="mx-1">·</span>
+                      <span x-show="suggestion.actor" x-text="suggestion.actor.split(',').slice(0, 2).join(' ')"></span>
+                    </div>
+                  </li>
+                </template>
+              </ul>
+            </div>
+
+            <!-- 历史搜索 - 只在没有联想搜索且输入框为空时显示 -->
+            <template x-if="autocompleteSuggestions.length === 0 &amp;&amp; !keyword.trim()">
+              <div class="space-y-2 mt-4 px-4" x-data="searchHistory()" x-show="historyList.length">
+                <div class="flex justify-between">
+                  <strong class="text-white text-base">历史搜索</strong>
+                  <span @click="clearHistory()" class="cursor-pointer flex items-center justify-cente active:text-red-400 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-[18px]">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="flex flex-wrap">
+                    <div x-show="historyList.length === 0" x-cloak="" class="text-sm">暂无搜索历史</div>
+                  <template x-for="keyword in historyList" :key="keyword">
+                    <div class="flex items-center text-sm bg-white/10 rounded-full px-3 py-1 hover:bg-white/20 hover:text-white transition cursor-pointer m-1" @click.stop="$dispatch('history-search', keyword)">
+                      <span x-text="keyword"></span>
+                      <span class="ml-1 scale-125 hover:text-red-400 transition" @click.prevent.stop="removeHistory(keyword)">×</span>
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </template><div class="space-y-2 mt-4 px-4" x-data="searchHistory()" x-show="historyList.length" style="display: none;">
+                <div class="flex justify-between">
+                  <strong class="text-white text-base">历史搜索</strong>
+                  <span @click="clearHistory()" class="cursor-pointer flex items-center justify-cente active:text-red-400 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-[18px]">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"></path>
+                    </svg>
+                  </span>
+                </div>
+                <div class="flex flex-wrap">
+                    <div x-show="historyList.length === 0" class="text-sm">暂无搜索历史</div>
+                  <template x-for="keyword in historyList" :key="keyword">
+                    <div class="flex items-center text-sm bg-white/10 rounded-full px-3 py-1 hover:bg-white/20 hover:text-white transition cursor-pointer m-1" @click.stop="$dispatch('history-search', keyword)">
+                      <span x-text="keyword"></span>
+                      <span class="ml-1 scale-125 hover:text-red-400 transition" @click.prevent.stop="removeHistory(keyword)">×</span>
+                    </div>
+                  </template>
+                </div>
+              </div>
+
+            <!-- 热门搜索 - 只在没有联想搜索且输入框为空时显示 -->
+            <template x-if="autocompleteSuggestions.length === 0 &amp;&amp; !keyword.trim()">
+              <div class="space-y-2 px-4 py-4" :class="{'pb-64': isMobile}">
+                <strong class="text-white text-base">热门搜索</strong>
+                <ul id="rank-list" class="grid grid-cols-2 text-[15px]">
+                                    <li class="rank-item opacity-0 animate-rank-fade-in p-2">
+                    <a href="/vd/86574.html" class="flex space-x-2 rounded-sm text-gray-30">
+                      <span class="font-bold text-gray-400
+                        text-red-500">
+                        1                      </span>
+                      <span class="truncate flex-1">小城大事</span>
+                    </a>
+                  </li>
+                                    <li class="rank-item opacity-0 animate-rank-fade-in p-2">
+                    <a href="/vd/363.html" class="flex space-x-2 rounded-sm text-gray-30">
+                      <span class="font-bold text-gray-400
+                        text-orange-500">
+                        2                      </span>
+                      <span class="truncate flex-1">仙逆</span>
+                    </a>
+                  </li>
+                                    <li class="rank-item opacity-0 animate-rank-fade-in p-2">
+                    <a href="/vd/86477.html" class="flex space-x-2 rounded-sm text-gray-30">
+                      <span class="font-bold text-gray-400
+                        text-yellow-400">
+                        3                      </span>
+                      <span class="truncate flex-1">罚罪2</span>
+                    </a>
+                  </li>
+                                    <li class="rank-item opacity-0 animate-rank-fade-in p-2">
+                    <a href="/vd/86474.html" class="flex space-x-2 rounded-sm text-gray-30">
+                      <span class="font-bold text-gray-400
+                        ">
+                        4                      </span>
+                      <span class="truncate flex-1">剑来第二季</span>
+                    </a>
+                  </li>
+                                    <li class="rank-item opacity-0 animate-rank-fade-in p-2">
+                    <a href="/vd/86573.html" class="flex space-x-2 rounded-sm text-gray-30">
+                      <span class="font-bold text-gray-400
+                        ">
+                        5                      </span>
+                      <span class="truncate flex-1">轧戏</span>
+                    </a>
+                  </li>
+                                    <li class="rank-item opacity-0 animate-rank-fade-in p-2">
+                    <a href="/vd/554.html" class="flex space-x-2 rounded-sm text-gray-30">
+                      <span class="font-bold text-gray-400
+                        ">
+                        6                      </span>
+                      <span class="truncate flex-1">凡人修仙传</span>
+                    </a>
+                  </li>
+                                  </ul>
+              </div>
+            </template><div class="space-y-2 px-4 py-4" :class="{'pb-64': isMobile}">
+                <strong class="text-white text-base">热门搜索</strong>
+                <ul id="rank-list" class="grid grid-cols-2 text-[15px]">
+                                    <li class="rank-item opacity-0 animate-rank-fade-in p-2">
+                    <a href="/vd/86574.html" class="flex space-x-2 rounded-sm text-gray-30">
+                      <span class="font-bold text-gray-400
+                        text-red-500">
+                        1                      </span>
+                      <span class="truncate flex-1">小城大事</span>
+                    </a>
+                  </li>
+                                    <li class="rank-item opacity-0 animate-rank-fade-in p-2">
+                    <a href="/vd/363.html" class="flex space-x-2 rounded-sm text-gray-30">
+                      <span class="font-bold text-gray-400
+                        text-orange-500">
+                        2                      </span>
+                      <span class="truncate flex-1">仙逆</span>
+                    </a>
+                  </li>
+                                    <li class="rank-item opacity-0 animate-rank-fade-in p-2">
+                    <a href="/vd/86477.html" class="flex space-x-2 rounded-sm text-gray-30">
+                      <span class="font-bold text-gray-400
+                        text-yellow-400">
+                        3                      </span>
+                      <span class="truncate flex-1">罚罪2</span>
+                    </a>
+                  </li>
+                                    <li class="rank-item opacity-0 animate-rank-fade-in p-2">
+                    <a href="/vd/86474.html" class="flex space-x-2 rounded-sm text-gray-30">
+                      <span class="font-bold text-gray-400
+                        ">
+                        4                      </span>
+                      <span class="truncate flex-1">剑来第二季</span>
+                    </a>
+                  </li>
+                                    <li class="rank-item opacity-0 animate-rank-fade-in p-2">
+                    <a href="/vd/86573.html" class="flex space-x-2 rounded-sm text-gray-30">
+                      <span class="font-bold text-gray-400
+                        ">
+                        5                      </span>
+                      <span class="truncate flex-1">轧戏</span>
+                    </a>
+                  </li>
+                                    <li class="rank-item opacity-0 animate-rank-fade-in p-2">
+                    <a href="/vd/554.html" class="flex space-x-2 rounded-sm text-gray-30">
+                      <span class="font-bold text-gray-400
+                        ">
+                        6                      </span>
+                      <span class="truncate flex-1">凡人修仙传</span>
+                    </a>
+                  </li>
+                                  </ul>
+              </div>
+          </div>
+      </div>
+      <!-- 隐藏的热门搜索数据，用于placeholder -->
+      <div class="hidden">
+                <span id="hot-placeholder-data">小城大事</span>
+              </div>
+    </div>
+    <div class="relative" x-data="historyPanel()">
+      <button @click="togglePanel()" class="flex items-center text-[#DADFE9] cursor-pointer select-none px-2 outline-none border-none" style="outline: none; border: none;">
+        <i class="text-xl icon-history-o"></i>
+        <span class="hidden min-[850px]:block text-sm ml-1">观看记录</span>
+      </button>
+      <div x-show="isVisible" x-transition:enter="transition transform duration-400" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="absolute w-[300px] right-0 top-[46px] bg-gray-800 border border-slate-600/50 rounded-lg text-[13px] text-[#e1e3e5]" style="display: none;">
+      <ul class="p-4 relative z-10" @click.outside="handleOutsideClick">
+        <li class="after:absolute after:left-[13px] after:top-[9px] after:z-[-1] after:h-full after:border-l after:border-dashed after:border-[#3e3e4b] relative pl-[6px] text-base flex items-center mb-2 after:border-none" :class="historyList.length === 0 &amp;&amp; 'after:border-none'">
+          <i class="icon-history  text-yellow-500 mr-2"></i>
+          <strong class="text-white">我的观影记录</strong>
+        </li>
+        <template x-for="item in historyList" :key="item.historyKey">
+          <li class="after:absolute after:left-[13px] after:top-1 after:z-[-1] after:h-full after:border-l after:border-dashed after:border-[#3e3e4b] relative cursor-pointer hover:text-yellow-400" @click="clickHistory(item.historyKey)" style="text-decoration: none;">
+            <div class="flex items-center justify-between relative h-8 p-1 pl-[9px] before:h-[9px] before:w-[9px] before:border before:border-solid before:border-yellow-400 before:rounded-full before:hover:bg-yellow-400" :data-id="item.historyKey">
+              <h5 class="flex-1 truncate ml-[10px] mr-3" x-text="item.vodName" style="text-decoration: none;"></h5>
+              <span class="text-xs text-right text-[#a0a0a0]" x-text="item.vodPart || ''" style="text-decoration: none;"></span>
+            </div>
+            <div class="scale-y-75 absolute top-[25px] left-[30px] w-[87%] h-1 bg-gray-700 rounded-full overflow-hidden">
+              <div class="h-full bg-green-500" :style="`width: ${item.duration ? (item.currentTime / item.duration * 100) : 0}%`"></div>
+            </div>
+          </li>
+        </template>
+        <li class="pt-2" x-show="historyList.length &gt; 0" style="display: none;">
+          <button @click="clearHistory()" class="text-center mt-2 py-1.5 rounded-lg bg-gray-700 hover:bg-gray-600 hover:text-yellow-400 hover:font-bold cursor-pointer w-full transition-colors">清空</button>
+        </li>
+        <div x-show="historyList.length === 0" class="h-[165px] flex flex-col items-center justify-center">
+          <img src="/template/dist/asset/images/history.svg" class="h-28 mb-3">
+          <span class="text-gray-400 text-sm">暂无观看影片的记录</span>
+        </div>
+      </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="md:h-[60px]"></div>
+
+    <main class="max-w-7xl mx-auto p-2">
+      <div id="sitedesc" class="flex flex-wrap items-center mb-2 text-base text-gray-400">
+    <span class="text-base mr-2"> <style>
+  @media (max-width: 480px) {
+      .app-subtitle { display: none !important; }
+  }
+  </style>
+
+  <div style="display: flex; gap: 10px;">
+      <!-- 安卓 -->
+      <div style="
+          flex: 1;
+          display: flex; 
+          align-items: center; 
+          justify-content: space-between; 
+          background: #1a1b26; 
+          border: 4px solid #000; 
+          padding: 8px 12px; 
+          font-family: 'SimSun', '宋体', 'Courier New', monospace; 
+          box-sizing: border-box;
+          background-image: radial-gradient(#2a2b36 15%, transparent 16%);
+          background-size: 3px 3px;
+      ">
+          <div style="line-height: 1.2;">
+              <div style="color: #fff; font-weight: 900; font-size: 16px; letter-spacing: 1px;">安卓App</div>
+              <div class="app-subtitle" style="color: #8892b0; font-size: 11px; margin-top: 3px;">更稳定 · 更流畅</div>
+          </div>
+          <a href="https://qqqys.com/app.html" style="
+              text-decoration: none;
+              color: #000; 
+              font-weight: 900;
+              font-size: 13px; 
+              padding: 6px 12px; 
+              border: 3px solid #000; 
+              display: inline-block;
+              box-shadow: 4px 4px 0 #000; 
+              white-space: nowrap;
+              background-color: #ffcc00;
+              background-image: 
+                  linear-gradient(45deg, #e6b800 25%, transparent 25%, transparent 75%, #e6b800 75%, #e6b800), 
+                  linear-gradient(45deg, #e6b800 25%, transparent 25%, transparent 75%, #e6b800 75%, #e6b800);
+              background-position: 0 0, 4px 4px;
+              background-size: 8px 8px;
+          ">立即下载</a>
+      </div>
+
+      <!-- iOS -->
+      <div style="
+          flex: 1;
+          display: flex; 
+          align-items: center; 
+          justify-content: space-between; 
+          background: #1a1b26; 
+          border: 4px solid #000; 
+          padding: 8px 12px; 
+          font-family: 'SimSun', '宋体', 'Courier New', monospace; 
+          box-sizing: border-box;
+          background-image: radial-gradient(#2a2b36 15%, transparent 16%);
+          background-size: 3px 3px;
+      ">
+          <div style="line-height: 1.2;">
+              <div style="color: #fff; font-weight: 900; font-size: 16px; letter-spacing: 1px;">IOS App</div>
+              <div class="app-subtitle" style="color: #8892b0; font-size: 11px; margin-top: 3px;">更稳定 · 更流畅</div>
+          </div>
+          <a href="https://qqqys.com/iosdownload6.html" style="
+              text-decoration: none;
+              color: #000; 
+              font-weight: 900;
+              font-size: 13px; 
+              padding: 6px 12px; 
+              border: 3px solid #000; 
+              display: inline-block;
+              box-shadow: 4px 4px 0 #000; 
+              white-space: nowrap;
+              background-color: #00d4aa;
+              background-image: 
+                  linear-gradient(45deg, #00b894 25%, transparent 25%, transparent 75%, #00b894 75%, #00b894), 
+                  linear-gradient(45deg, #00b894 25%, transparent 25%, transparent 75%, #00b894 75%, #00b894);
+              background-position: 0 0, 4px 4px;
+              background-size: 8px 8px;
+          ">立即下载</a>
+      </div>
+  </div>
+ </span>
+</div>
+
+<!-- vivo浏览器兼容性提示 -->
+<div id="vivo-browser-warning" class="hidden text-xs text-red-500 mb-2">
+    如果vivo浏览器不能全屏播放，请使用edge或chrome等浏览器进行全屏观看(应用商店搜索edge)
+</div>
+
+<script>
+// 检测vivo浏览器并显示警告
+(function() {
+    if (/vivo|VivoBrowser/i.test(navigator.userAgent)) {
+        const warning = document.getElementById('vivo-browser-warning');
+        if (warning) {
+            warning.classList.remove('hidden');
+        }
+    }
+})();
+</script>
+      <section>
+  <div class="mb-3">
+    <h3 class="text-xl font-bold">热门推荐</h3>
+  </div>
+  <div class="grid grid-cols-3 md:grid-cols-6">
+          <div class="p-1 md:p-2">
+        <a href="/vd/86574.html" title="小城大事" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			已完结		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="lazy absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loading" data-original="https://api.zxki.cn/api/imgfdl?url=https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2928425203.jpg" alt="小城大事" src="/template/dist/asset/images/load.png" referrerpolicy="no-referrer">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">小城大事</div>
+</a>
+      </div>
+          <div class="p-1 md:p-2">
+        <a href="/vd/86477.html" title="罚罪2" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			全40集		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://viptulz.com/upload/vod/20251225-1/8b752d4f42ad48d26ce68ef4cca7ebd3.jpg" alt="罚罪2" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fviptulz.com%2Fupload%2Fvod%2F20251225-1%2F8b752d4f42ad48d26ce68ef4cca7ebd3.jpg" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">罚罪2</div>
+</a>
+      </div>
+          <div class="p-1 md:p-2">
+        <a href="/vd/652.html" title="斗罗大陆2：绝世唐门" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			更新至137集		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://dbzy5.com/upload/vod/20250110-1/13e3ba2c79f68b2ae6806244ed0cdb50.jpg" alt="斗罗大陆2：绝世唐门" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fdbzy5.com%2Fupload%2Fvod%2F20250110-1%2F13e3ba2c79f68b2ae6806244ed0cdb50.jpg" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">斗罗大陆2：绝世唐门</div>
+</a>
+      </div>
+          <div class="p-1 md:p-2">
+        <a href="/vd/86474.html" title="剑来第二季" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			第7集		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://vcover-vt-pic.puui.qpic.cn/vcover_vt_pic/0/mzc00200xxpsogl1766627170315/0" alt="剑来第二季" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fvcover-vt-pic.puui.qpic.cn%2Fvcover_vt_pic%2F0%2Fmzc00200xxpsogl1766627170315%2F0" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">剑来第二季</div>
+</a>
+      </div>
+          <div class="p-1 md:p-2">
+        <a href="/vd/363.html" title="仙逆" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			第124集		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://vcover-vt-pic.puui.qpic.cn/vcover_vt_pic/0/mzc00200aaogpgh1766914172519/0" alt="仙逆" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fvcover-vt-pic.puui.qpic.cn%2Fvcover_vt_pic%2F0%2Fmzc00200aaogpgh1766914172519%2F0" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">仙逆</div>
+</a>
+      </div>
+          <div class="p-1 md:p-2">
+        <a href="/vd/554.html" title="凡人修仙传" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			更新至第176话		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://dbzy5.com/upload/vod/20250126-1/1488821c146f4d69d142b10ee53ca7ec.jpg" alt="凡人修仙传" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fdbzy5.com%2Fupload%2Fvod%2F20250126-1%2F1488821c146f4d69d142b10ee53ca7ec.jpg" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">凡人修仙传</div>
+</a>
+      </div>
+      </div>
+</section>
+
+      	
+<section class="mt-8">
+	<div class="mb-3 flex justify-between items-end">
+		<h3 class="text-xl font-bold hover:text-[#f8cf03]">
+			<a href="/vodshow/1.html">电影</a>
+		</h3>
+		<a class="text-sm flex items-center hover:text-[#f8cf03]" href="/vodshow/1.html">更多<i class="icon-arrow-right text-xs"></i></a>
+	</div>
+
+	<div class="grid grid-cols-3 md:grid-cols-6">
+							<div class="p-1 md:p-2">
+					<a href="/vd/84985.html" title="风林火山" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			正片		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://dbzy5.com/upload/vod/20251001-1/7cf14ed3c6765cc4152c3fa27f4d2cfd.jpg" alt="风林火山" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fdbzy5.com%2Fupload%2Fvod%2F20251001-1%2F7cf14ed3c6765cc4152c3fa27f4d2cfd.jpg" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">风林火山</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/86421.html" title="疯狂动物城2" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			最强拍档回归，全城再度疯狂		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://lain.bgm.tv/r/400/pic/cover/l/9e/7c/419613_5IY5Y.jpg" alt="疯狂动物城2" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Flain.bgm.tv%2Fr%2F400%2Fpic%2Fcover%2Fl%2F9e%2F7c%2F419613_5IY5Y.jpg" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">疯狂动物城2</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/86456.html" title="阿凡达：火与烬" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			TC版		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://vcover-vt-pic.puui.qpic.cn/vcover_vt_pic/0/mzc00200hina79f1753718782769/0" alt="阿凡达：火与烬" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fvcover-vt-pic.puui.qpic.cn%2Fvcover_vt_pic%2F0%2Fmzc00200hina79f1753718782769%2F0" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">阿凡达：火与烬</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/83902.html" title="浪浪人生" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			2025-09-30上映		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://dbzy5.com/upload/vod/20251002-1/2ce0033f5533088a4d3c34a600250158.jpg" alt="浪浪人生" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fdbzy5.com%2Fupload%2Fvod%2F20251002-1%2F2ce0033f5533088a4d3c34a600250158.jpg" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">浪浪人生</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/1625.html" title="鬼灭之刃 剧场版 无限城篇 第一章 猗窝座再来" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			正片		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://dbzy5.com/upload/vod/20250721-1/a2fd0ad8ac2de5a3e1119683849dff2e.jpg" alt="鬼灭之刃 剧场版 无限城篇 第一章 猗窝座再来" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fdbzy5.com%2Fupload%2Fvod%2F20250721-1%2Fa2fd0ad8ac2de5a3e1119683849dff2e.jpg" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">鬼灭之刃 剧场版 无限城篇 第一章 猗窝座再来</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/69765.html" title="浪浪山小妖怪" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			蓝光·正片		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://dbzy5.com/upload/vod/20250808-1/424a488b4a059de49b3520f0e80a2133.jpg" alt="浪浪山小妖怪" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fdbzy5.com%2Fupload%2Fvod%2F20250808-1%2F424a488b4a059de49b3520f0e80a2133.jpg" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">浪浪山小妖怪</div>
+</a>
+				</div>
+				</div>
+</section>
+	
+<section class="mt-8">
+	<div class="mb-3 flex justify-between items-end">
+		<h3 class="text-xl font-bold hover:text-[#f8cf03]">
+			<a href="/vodshow/2.html">剧集</a>
+		</h3>
+		<a class="text-sm flex items-center hover:text-[#f8cf03]" href="/vodshow/2.html">更多<i class="icon-arrow-right text-xs"></i></a>
+	</div>
+
+	<div class="grid grid-cols-3 md:grid-cols-6">
+							<div class="p-1 md:p-2">
+					<a href="/vd/86574.html" title="小城大事" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			已完结		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="lazy absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loading" data-original="https://api.zxki.cn/api/imgfdl?url=https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2928425203.jpg" alt="小城大事" src="/template/dist/asset/images/load.png" referrerpolicy="no-referrer">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">小城大事</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/86477.html" title="罚罪2" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			全40集		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://viptulz.com/upload/vod/20251225-1/8b752d4f42ad48d26ce68ef4cca7ebd3.jpg" alt="罚罪2" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fviptulz.com%2Fupload%2Fvod%2F20251225-1%2F8b752d4f42ad48d26ce68ef4cca7ebd3.jpg" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">罚罪2</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/86573.html" title="轧戏" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			全28集		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="lazy absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loading" data-original="https://api.zxki.cn/api/imgfdl?url=https://img9.doubanio.com/view/photo/s_ratio_poster/public/p2928743486.jpg" alt="轧戏" src="/template/dist/asset/images/load.png" referrerpolicy="no-referrer">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">轧戏</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/86486.html" title="玉茗茶骨" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			全36集		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://0img.hitv.com/preview/sp_images/2026/01/07/202601071418070269153.jpg" alt="玉茗茶骨" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2F0img.hitv.com%2Fpreview%2Fsp_images%2F2026%2F01%2F07%2F202601071418070269153.jpg" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">玉茗茶骨</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/86255.html" title="唐朝诡事录之长安" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			已完结		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://dbzy5.com/upload/vod/20251108-1/b8fe61a8a8d5167dae3e972101772bfe.jpg" alt="唐朝诡事录之长安" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fdbzy5.com%2Fupload%2Fvod%2F20251108-1%2Fb8fe61a8a8d5167dae3e972101772bfe.jpg" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">唐朝诡事录之长安</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/86593.html" title="御赐小仵作2" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			更新至20集		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="lazy absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 error" data-original="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2922875867.jpg" alt="御赐小仵作2" src="/template/dist/asset/images/load.png" referrerpolicy="no-referrer" data-retry="1">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">御赐小仵作2</div>
+</a>
+				</div>
+				</div>
+</section>
+	
+<section class="mt-8">
+	<div class="mb-3 flex justify-between items-end">
+		<h3 class="text-xl font-bold hover:text-[#f8cf03]">
+			<a href="/vodshow/3.html">动漫</a>
+		</h3>
+		<a class="text-sm flex items-center hover:text-[#f8cf03]" href="/vodshow/3.html">更多<i class="icon-arrow-right text-xs"></i></a>
+	</div>
+
+	<div class="grid grid-cols-3 md:grid-cols-6">
+							<div class="p-1 md:p-2">
+					<a href="/vd/363.html" title="仙逆" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			第124集		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://vcover-vt-pic.puui.qpic.cn/vcover_vt_pic/0/mzc00200aaogpgh1766914172519/0" alt="仙逆" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fvcover-vt-pic.puui.qpic.cn%2Fvcover_vt_pic%2F0%2Fmzc00200aaogpgh1766914172519%2F0" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">仙逆</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/86474.html" title="剑来第二季" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			第7集		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://vcover-vt-pic.puui.qpic.cn/vcover_vt_pic/0/mzc00200xxpsogl1766627170315/0" alt="剑来第二季" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fvcover-vt-pic.puui.qpic.cn%2Fvcover_vt_pic%2F0%2Fmzc00200xxpsogl1766627170315%2F0" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">剑来第二季</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/554.html" title="凡人修仙传" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			更新至第176话		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://dbzy5.com/upload/vod/20250126-1/1488821c146f4d69d142b10ee53ca7ec.jpg" alt="凡人修仙传" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fdbzy5.com%2Fupload%2Fvod%2F20250126-1%2F1488821c146f4d69d142b10ee53ca7ec.jpg" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">凡人修仙传</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/413.html" title="牧神记" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			第66集		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://i0.hdslb.com/bfs/bangumi/image/1a321192dd267265573b6f198d025d2da9e75ae1.png" alt="牧神记" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Fi0.hdslb.com%2Fbfs%2Fbangumi%2Fimage%2F1a321192dd267265573b6f198d025d2da9e75ae1.png" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">牧神记</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/71785.html" title="吞噬星空" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			第207集		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="lazy absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loading" data-original="https://vcover-vt-pic.puui.qpic.cn/vcover_vt_pic/0/324olz7ilvo2j5f1754528590932/0" alt="吞噬星空" src="/template/dist/asset/images/load.png" referrerpolicy="no-referrer">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">吞噬星空</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/950.html" title="完美世界" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			已完结		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 md:group-hover:scale-111 loaded" data-original="https://inews.gtimg.com/newsapp_ls/0/15819637568/0" alt="完美世界" src="https://gimg0.baidu.com/gimg/app=2001&amp;n=0&amp;g=0n&amp;fmt=jpeg&amp;src=https%3A%2F%2Finews.gtimg.com%2Fnewsapp_ls%2F0%2F15819637568%2F0" referrerpolicy="no-referrer" style="opacity: 1; transition: opacity 0.3s ease-in-out;">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">完美世界</div>
+</a>
+				</div>
+				</div>
+</section>
+	
+<section class="mt-8">
+	<div class="mb-3 flex justify-between items-end">
+		<h3 class="text-xl font-bold hover:text-[#f8cf03]">
+			<a href="/vodshow/4.html">综艺</a>
+		</h3>
+		<a class="text-sm flex items-center hover:text-[#f8cf03]" href="/vodshow/4.html">更多<i class="icon-arrow-right text-xs"></i></a>
+	</div>
+
+	<div class="grid grid-cols-3 md:grid-cols-6">
+							<div class="p-1 md:p-2">
+					<a href="/vd/86167.html" title="现在就出发 第三季" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			更新至12-21期/全10期		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="lazy absolute top-0 left-0 w-full h-full object-cover  transition-transform duration-300 md:group-hover:scale-111" data-original="https://vcover-vt-pic.puui.qpic.cn/vcover_vt_pic/0/mzc00200znyfa5u1760853924228/0" alt="现在就出发 第三季" src="/template/dist/asset/images/load.png" referrerpolicy="no-referrer">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">现在就出发 第三季</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/82396.html" title="喜人奇妙夜2" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			更新至11-02期		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="lazy absolute top-0 left-0 w-full h-full object-cover  transition-transform duration-300 md:group-hover:scale-111" data-original="https://dbzy5.com/upload/vod/20250924-1/7c06e8eba320a90bce7e6d933bfe798a.jpg" alt="喜人奇妙夜2" src="/template/dist/asset/images/load.png" referrerpolicy="no-referrer">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">喜人奇妙夜2</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/86439.html" title="奔跑吧·天路篇" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			更新至12-20期更新中/全8期		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="lazy absolute top-0 left-0 w-full h-full object-cover  transition-transform duration-300 md:group-hover:scale-111" data-original="https://vcover-vt-pic.puui.qpic.cn/vcover_vt_pic/0/mzc00200gvy0g5b1761538848806/0" alt="奔跑吧·天路篇" src="/template/dist/asset/images/load.png" referrerpolicy="no-referrer">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">奔跑吧·天路篇</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/86531.html" title="宇宙闪烁请注意" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			更新至2026-01-22期		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="lazy absolute top-0 left-0 w-full h-full object-cover  transition-transform duration-300 md:group-hover:scale-111" data-original="https://pic0.iqiyipic.com/image/20251227/58/54/a_100684636_m_601_m5.jpg" alt="宇宙闪烁请注意" src="/template/dist/asset/images/load.png" referrerpolicy="no-referrer">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">宇宙闪烁请注意</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/77073.html" title="现在就出发 第二季" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			已完结		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="lazy absolute top-0 left-0 w-full h-full object-cover  transition-transform duration-300 md:group-hover:scale-111" data-original="https://img.ffzy888.com/upload/vod/20241019-1/5d2d537148188666aabe0ba633d8e74f.jpg" alt="现在就出发 第二季" src="/template/dist/asset/images/load.png" referrerpolicy="no-referrer">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">现在就出发 第二季</div>
+</a>
+				</div>
+							<div class="p-1 md:p-2">
+					<a href="/vd/55664.html" title="现在就出发" class="group transition-all duration-300 md:hover:font-bold md:hover:text-yellow-500">
+	<div class="relative rounded-lg overflow-hidden shadow-sm transition-all duration-300 md:group-hover:shadow-xl md:group-hover:-translate-y-1 md:group-hover:scale-105">
+		<!-- 豆瓣评分 - 左上角（仅在专题页面显示） -->
+				<div class="truncate text-center text-xs absolute right-0 bottom-0 left-0 z-10 pt-[50px] px-[5px] pb-[10px] pointer-events-none text-white" style="background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);">
+			20250119游戏特辑		</div>
+		<div class="relative aspect-poster" style="aspect-ratio: 10/14;">
+			<!-- 兼容性处理：对于不支持aspect-ratio的浏览器使用padding-bottom -->
+			<style>
+				@supports not (aspect-ratio: 1) {
+					.aspect-poster {
+						padding-bottom: 140% !important;
+						height: 0 !important;
+					}
+					.aspect-poster img {
+						position: absolute !important;
+						top: 0 !important;
+						left: 0 !important;
+						width: 100% !important;
+						height: 100% !important;
+					}
+				}
+			</style>
+			<img class="lazy absolute top-0 left-0 w-full h-full object-cover  transition-transform duration-300 md:group-hover:scale-111" data-original="https://dbzy5.com/upload/vod/20250108-52/fb470ac86400daeb70723d139c69717a.jpg" alt="现在就出发" src="/template/dist/asset/images/load.png" referrerpolicy="no-referrer">
+		</div>
+	</div>
+	<div class="text-left text-sm mt-2 font-bold truncate">现在就出发</div>
+</a>
+				</div>
+				</div>
+</section>
+    </main>
+  <footer class="fixed bottom-0 left-0 right-0 py-1 bg-slate-800 text-[#9EA3AE] border-t border-gray-700/50 shadow-lg z-20 flex justify-around  md:hidden">
+	<a href="/" class="flex-1 flex flex-col items-center justify-center  text-[#FFD700]">
+		<i class="icon-home text-xl  mb-1"></i>
+		<span class="text-xs">首页</span>
+	</a>
+	<a href="/label/topic.html" class="flex-1 flex flex-col items-center justify-center ">
+		<i class="icon-info text-xl  mb-1"></i>
+		<span class="text-xs">专题</span>
+	</a>
+	<a href="/label/faq.html" class="flex-1 flex flex-col items-center justify-center ">
+		<svg class="w-7 h-7 mb-1" fill="currentColor" viewBox="0 0 20 20">
+			<path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+		</svg>
+		<span class="text-xs">问答</span>
+	</a>
+	<a href="/label/rank.html" class="flex-1 flex flex-col items-center justify-center ">
+		<i class="icon-ranking text-xl  mb-1"></i>
+		<span class="text-xs">排行榜</span>
+	</a>
+	
+</footer>
+<div class="h-[60px] md:hidden"></div>
+
+
+</body></html>
